@@ -588,7 +588,20 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: ENVIRO_LW;ENVIRO_HD;ENVIRO_LWRP
+    7: ENVIRO_LW;ENVIRO_HD;ENVIRO_LWRP
+    13: ENVIRO_LW;ENVIRO_HD;ENVIRO_LWRP
+    14: ENVIRO_LW;ENVIRO_HD;ENVIRO_LWRP
+    19: ENVIRO_LW;ENVIRO_HD;ENVIRO_LWRP
+    21: ENVIRO_LW;ENVIRO_HD;ENVIRO_LWRP
+    25: ENVIRO_LW;ENVIRO_HD;ENVIRO_LWRP
+    27: ENVIRO_LW;ENVIRO_HD;ENVIRO_LWRP
+    28: ENVIRO_LW;ENVIRO_HD;ENVIRO_LWRP
+    29: ENVIRO_LW;ENVIRO_HD;ENVIRO_LWRP
+    30: ENVIRO_LW;ENVIRO_HD;ENVIRO_LWRP
+    32: ENVIRO_LW;ENVIRO_HD;ENVIRO_LWRP
+    33: ENVIRO_LW;ENVIRO_HD;ENVIRO_LWRP
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
