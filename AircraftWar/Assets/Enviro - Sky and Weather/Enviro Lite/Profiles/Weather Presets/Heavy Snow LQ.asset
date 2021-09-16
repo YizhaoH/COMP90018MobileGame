@@ -155,6 +155,9 @@ MonoBehaviour:
   - prefab: {fileID: 1000012464414300, guid: 5ed4ce1f9abfa944fb0462b08c373c93, type: 3}
     localPositionOffset: {x: 0, y: 20, z: 0}
     localRotationOffset: {x: -90, y: 0, z: -180}
+  - prefab: {fileID: 1000013790200260, guid: 31dd8ccc1924c534e8a366c92c8410f3, type: 3}
+    localPositionOffset: {x: 0, y: 20, z: 0}
+    localRotationOffset: {x: -90, y: 0, z: -180}
   WindStrenght: 0.203
   wetnessLevel: 0
   snowLevel: 1

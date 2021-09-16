@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -146,12 +147,12 @@ MonoBehaviour:
   heightFogDensity: 0.65
   SkyFogHeight: 0.715
   skyFogStart: 0
-  SkyFogIntensity: 1.055
+  SkyFogIntensity: 1
   FogScatteringIntensity: 1.12
   fogSunBlocking: 0.25
   moonIntensity: 1
   effectSystems:
-  - prefab: {fileID: 1000011163096958, guid: 07951236abb2b0e4b83fef1afffeab6d, type: 2}
+  - prefab: {fileID: 1000011163096958, guid: 07951236abb2b0e4b83fef1afffeab6d, type: 3}
     localPositionOffset: {x: 0, y: 20, z: 0}
     localRotationOffset: {x: -90, y: 0, z: -180}
   WindStrenght: 0.16
