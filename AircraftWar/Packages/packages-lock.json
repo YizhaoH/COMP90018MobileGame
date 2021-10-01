@@ -14,14 +14,6 @@
         "com.google.external-dependency-manager": "1.2.166"
       }
     },
-    "com.google.firebase.auth": {
-      "version": "file:../GooglePackages/com.google.firebase.auth-8.3.0.tgz",
-      "depth": 0,
-      "source": "local-tarball",
-      "dependencies": {
-        "com.google.firebase.app": "8.3.0"
-      }
-    },
     "com.unity.collab-proxy": {
       "version": "1.7.1",
       "depth": 0,
