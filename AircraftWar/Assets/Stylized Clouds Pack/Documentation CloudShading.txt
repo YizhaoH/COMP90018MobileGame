@@ -1,0 +1,27 @@
+SHD_Clouds 
+
+The custom shader for cloud assets has multiple different features. With these features, you can quickly change the look and feel. 
+The shader is made in shadergraph and has six subgraphs and two custom functions. 
+
+Shading Features
+For the shading, the shader uses three different elements. A local space gradient for a gradient over the mesh, baked ambient occlusion and thickness in the vertex colours for creating depth and light attenuation for primary lighting data.
+The baked AO comes from the red channel of the vertex colours and is controlled by the 'AO Strength' for regulating the intensity.
+The baked thickness is in the blue vertex colours channel and controlled by the slider, 'Thickness Strength'.
+
+
+Colour
+To colour the cloud meshes, I blend two colours based on the shading and feed it into the 'FuzzyShading' graph.
+This subgraph creates a shine on the edges and darkens the core of the mesh. The parameters 'Power' and 'Edge Brightness' control the intensity and falloff range of the shine. And the parameter 'Core Darkness' controls the darkening of the core. 
+The output of the subgraph is multiplied with the subgraph LightColour. This graph gets the intensity and colour from the directional light in the scene.
+
+
+Vertex Position
+To make the clouds move, I use a 3D Simplex noise created by Keijiro to create a smooth 3D world space noise.
+I used the time node to animate the noise going upwards.
+The noise is multiplied by the vertex normals and added to the original vertex position.
+
+
+For any questions or feedback you can contact me at:
+Quint@emberglitch.com
+
+Please include the package name in the subject for any support tickets.
