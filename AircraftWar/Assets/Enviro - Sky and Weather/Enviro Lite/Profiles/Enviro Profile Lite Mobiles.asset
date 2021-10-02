@@ -66,8 +66,8 @@ MonoBehaviour:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.48750305
-        value: 0.72829515
+        time: 0.54634094
+        value: 0.625573
         inSlope: 5
         outSlope: 5
         tangentMode: 0
@@ -75,8 +75,8 @@ MonoBehaviour:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: 1.504342
+        time: 0.9975891
+        value: 1.2776474
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    lightIntensityTransitionSpeed: 1
+    lightIntensityTransitionSpeed: 0.85
     shadowIntensity:
       serializedVersion: 2
       m_Curve:
@@ -1254,8 +1254,7 @@ MonoBehaviour:
     locationOffset: {x: 0, y: 0}
     weatherAnimSpeedScale: 0.333
     globalCloudCoverage: 1
-    cirrusCloudsTexture: {fileID: 2800000, guid: 724998a51cd1bcf438cdc5ca572beef4,
-      type: 3}
+    cirrusCloudsTexture: {fileID: 2800000, guid: 724998a51cd1bcf438cdc5ca572beef4, type: 3}
     cirrusCloudsColor:
       serializedVersion: 2
       key0: {r: 0.09019608, g: 0.09019608, b: 0.101960786, a: 1}
@@ -1286,11 +1285,9 @@ MonoBehaviour:
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
     cirrusCloudsAltitude: 10
-    flatCloudsBaseTexture: {fileID: 2800000, guid: 9b9ac0c14a0678d498b26fb2486005f1,
-      type: 3}
+    flatCloudsBaseTexture: {fileID: 2800000, guid: 9b9ac0c14a0678d498b26fb2486005f1, type: 3}
     flatCloudsBaseTextureTiling: 2
-    flatCloudsDetailTexture: {fileID: 2800000, guid: 3904de3fb7c0ff1419fd3064f8114c90,
-      type: 3}
+    flatCloudsDetailTexture: {fileID: 2800000, guid: 3904de3fb7c0ff1419fd3064f8114c90, type: 3}
     flatCloudsDetailTextureTiling: 15
     flatCloudsDirectLightColor:
       serializedVersion: 2
@@ -1428,8 +1425,7 @@ MonoBehaviour:
     windIntensityTransitionSpeed: 1
     effectTransitionSpeed: 1
     audioTransitionSpeed: 0.1
-    lightningEffect: {fileID: 1573907201630640, guid: 044a06c0461cf464dbd3727572a70d42,
-      type: 3}
+    lightningEffect: {fileID: 1573907201630640, guid: 044a06c0461cf464dbd3727572a70d42, type: 3}
     lightningRange: 500
     lightningHeight: 750
     temperatureChangingSpeed: 10
@@ -1445,7 +1441,7 @@ MonoBehaviour:
     heightFog: 1
     height: 54.49
     heightFogIntensity: 1
-    heightDensity: 1.95
+    heightDensity: 1.55
     noiseIntensity: 1
     noiseIntensityOffset: 0.3
     noiseScale: 0.001
@@ -1488,19 +1484,19 @@ MonoBehaviour:
     useHDRPFog: 1
     fogColorTint:
       serializedVersion: 2
-      key0: {r: 0.29803923, g: 0.33333334, b: 0.4392157, a: 1}
-      key1: {r: 0.29803923, g: 0.33333334, b: 0.4392157, a: 1}
-      key2: {r: 0.5955882, g: 0.48383433, b: 0.36348397, a: 0}
-      key3: {r: 0.6, g: 0.69803923, b: 0.7647059, a: 0}
-      key4: {r: 0.6, g: 0.69803923, b: 0.7647059, a: 0}
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 30146
-      ctime2: 33423
-      ctime3: 37355
-      ctime4: 65535
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
       ctime5: 0
       ctime6: 0
       ctime7: 0
@@ -1513,7 +1509,7 @@ MonoBehaviour:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_NumColorKeys: 5
+      m_NumColorKeys: 2
       m_NumAlphaKeys: 2
   lightshaftsSettings:
     resolution: 0
@@ -1842,9 +1838,9 @@ MonoBehaviour:
   viewModeLW: 5
   showPlayerSetup: 0
   showRenderingSetup: 0
-  showComponentsSetup: 0
+  showComponentsSetup: 1
   showTimeUI: 0
   showWeatherUI: 0
   showAudioUI: 0
-  showEffectsUI: 1
+  showEffectsUI: 0
   modified: 1

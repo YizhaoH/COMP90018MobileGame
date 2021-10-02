@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Linq;
 
-namespace YizhaoCode.TerrainExtension
+namespace YizhaoCode.TerrainGeneration
 {
     public class TerrainGenerator : MonoBehaviour
     {

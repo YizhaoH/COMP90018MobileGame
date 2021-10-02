@@ -92,24 +92,24 @@ Material:
     - Vector1_2A06FCBD: 0.22
     - Vector1_A8FABF8F: 0.19
     - Vector1_D652EA7E: 0.1
-    - _AO_Strength: 0.48
+    - _AO_Strength: 0.541
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
     - _ColorFalloff: 10
-    - _CoreDarkness: 0.43
+    - _CoreDarkness: -0.17
     - _Cull: 2
     - _Cutoff: 0.5
     - _DstBlend: 0
-    - _EdgeBrightness: 0.34
+    - _EdgeBrightness: 2
     - _EnvironmentReflections: 1
-    - _FuzzyPower: 2
+    - _FuzzyPower: 2.8
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _HeigthOffset: -0.665
     - _Metallic: 0
-    - _NoisePower: 0.378
+    - _NoisePower: 0.354
     - _NoiseTiling: 8.81
     - _OcclusionStrength: 1
     - _QueueOffset: 0
@@ -124,8 +124,8 @@ Material:
     m_Colors:
     - Vector3_DF4CF5A5: {r: 0, g: 7.49, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.737095, g: 0.4022784, b: 0.754717, a: 1}
+    - _Color: {r: 1, g: 0.9103774, b: 0.9103774, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SecColor: {r: 0.8018868, g: 0.7100919, b: 0.47281063, a: 1}
+    - _SecColor: {r: 0.69411767, g: 0.7686275, b: 0.8431373, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
