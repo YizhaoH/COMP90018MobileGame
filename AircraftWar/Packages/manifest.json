@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "com.google.external-dependency-manager": "file:C:/Users/54713/OneDrive/桌面/COMP90018MobileGame-main/AircraftWar/GooglePackages/com.google.external-dependency-manager-1.2.166.tgz",
-    "com.google.firebase.app": "file:C:/Users/54713/OneDrive/桌面/COMP90018MobileGame-main/AircraftWar/GooglePackages/com.google.firebase.app-8.3.0.tgz",
-    "com.google.firebase.auth": "file:C:/Users/54713/OneDrive/桌面/COMP90018MobileGame-main/AircraftWar/GooglePackages/com.google.firebase.auth-8.3.0.tgz",
+    "com.google.external-dependency-manager": "file:../GooglePackages/com.google.external-dependency-manager-1.2.166.tgz",
+    "com.google.firebase.app": "file:../GooglePackages/com.google.firebase.app-8.3.0.tgz",
+    "com.google.firebase.auth": "file:../GooglePackages/com.google.firebase.auth-8.3.0.tgz",
     "com.unity.cinemachine": "2.8.0",
     "com.unity.collab-proxy": "1.7.1",
     "com.unity.ide.rider": "2.0.7",
