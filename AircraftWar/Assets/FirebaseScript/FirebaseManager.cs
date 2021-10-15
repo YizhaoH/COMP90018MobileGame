@@ -13,6 +13,7 @@ public class FirebaseManager : MonoBehaviour
     public DependencyStatus dependencyStatus;
     public FirebaseAuth auth;
     public FirebaseUser User;
+    public DatabaseReference DBreference;
 
     //Login variables
     [Header("Login")]
@@ -35,7 +36,8 @@ public class FirebaseManager : MonoBehaviour
     public TMP_Text battleText;
     public TMP_Text hightscoreText;
     public TMP_Text killedText;
-    
+    public TMP_InputField usernameField;
+
 
     private void Awake()
     {
@@ -57,6 +59,7 @@ public class FirebaseManager : MonoBehaviour
     {
         Debug.Log("Setting up Firebase Auth");
         auth = FirebaseAuth.DefaultInstance;
+        DBreference = FirebaseDatabase.DefaultInstance.RootReference;
     }
 
     public void ClearLoginFeilds()
@@ -133,8 +136,11 @@ public class FirebaseManager : MonoBehaviour
 
             yield return new WaitForSeconds(2);
 
+            usernameText.text = User.DisplayName;
             UIManager.instance.PersonalPage();
             confirmLoginText.text = "";
+            ClearLoginFeilds();
+            ClearRegisterFeilds();
         }
     }
 
@@ -198,11 +204,57 @@ public class FirebaseManager : MonoBehaviour
                     {
                         UIManager.instance.LoginScreen();
                         warningRegisterText.text = "";
+                        ClearLoginFeilds();
+                        ClearRegisterFeilds();
                     }
                 }
             }
         }
     }
+
+    private IEnumerator UpdateUsernameAuth(string _username)
+    {
+        //Create a user profile and set the username
+        UserProfile profile = new UserProfile { DisplayName = _username };
+
+        //Call the Firebase auth update user profile function passing the profile with the username
+        var ProfileTask = User.UpdateUserProfileAsync(profile);
+        //Wait until the task completes
+        yield return new WaitUntil(predicate: () => ProfileTask.IsCompleted);
+
+        if (ProfileTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {ProfileTask.Exception}");
+        }
+        else
+        {
+            //Auth username is now updated
+        }
+    }
+
+    private IEnumerator UpdateUsernameDatabase(string _username)
+    {
+        //Set the currently logged in user username in the database
+        var DBTask = DBreference.Child("users").Child(User.UserId).Child("username").SetValueAsync(_username);
+
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+
+        if (DBTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+        else
+        {
+            //Database username is now updated
+        }
+    }
+
+    public void SaveChange()
+    {
+        StartCoroutine(UpdateUsernameAuth(usernameField.text));
+        StartCoroutine(UpdateUsernameDatabase(usernameField.text));
+    }
+
 }
 
 
