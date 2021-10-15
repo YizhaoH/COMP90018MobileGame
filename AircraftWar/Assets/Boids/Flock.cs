@@ -4,26 +4,25 @@ using UnityEngine;
 
 public class Flock : MonoBehaviour
 {
-
+    public GameObject target;
     public FlockAgent agentPrefab;
     List<FlockAgent> agents = new List<FlockAgent>();
     public FlockBehaviour behaviour;
 
-    [Range(10,50)]public int startingCount = 30;
+    [Range(3,50)]public int startingCount = 30;
     public float AgentDensity = 0.1f;
 
     [Range(1f, 100f)]public float driveFactor = 10f;
     [Range(1f, 100f)]public float maxSpeed = 10f;
     [Range(1f, 50f)]public float neighborRadius = 5f;
     [Range(0f, 1f)]public float avoidanceRadiusMultiplier = 0.5f;
-    [Range(10f, 100f)] public float playerDetectionRadius = 50f;
+    [Range(200f, 1500f)] public float playerDetectionRadius = 1000f;
     [Range(0f, 180f)] public float playerDetectionDegree = 90f;
+    [Range(100f, 300f)]public float playerStopDetectionRadius = 200f;
     float squareMaxSpeed;
     float squareNeighborRadius;
     float squareAvoidanceRadius;
     public float SquareAvoidanceRadius{ get{ return squareAvoidanceRadius; } }
-    float sqaurePlayerDetectionRadius;
-    public float SqaurePlayerDetectionRadius{ get { return sqaurePlayerDetectionRadius; } }
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +30,6 @@ public class Flock : MonoBehaviour
         squareMaxSpeed = maxSpeed * maxSpeed;
         squareNeighborRadius = neighborRadius * neighborRadius;
         squareAvoidanceRadius = squareNeighborRadius * avoidanceRadiusMultiplier * avoidanceRadiusMultiplier;
-        sqaurePlayerDetectionRadius = playerDetectionRadius * playerDetectionRadius;
 
 
         for(int i=0; i<startingCount; i++)
@@ -51,8 +49,8 @@ public class Flock : MonoBehaviour
             int maxDistance = 500;
             if (Physics.Raycast(spawnPos, transform.TransformDirection(Vector3.up), out hit, maxDistance, layerMask))
             {
-                Debug.DrawRay(spawnPos, transform.TransformDirection(Vector3.up) * hit.distance, Color.yellow, 30, false);
-                Debug.Log("Did Hit");
+                //Debug.DrawRay(spawnPos, transform.TransformDirection(Vector3.up) * hit.distance, Color.yellow, 30, false);
+                //Debug.Log("Did Hit");
                 if( hit.collider.CompareTag("Terrain"))
                 {
                     float disToTerrain = hit.distance;
@@ -95,11 +93,17 @@ public class Flock : MonoBehaviour
     List<Transform> GetNearbyObject(FlockAgent agent)
     {
         List<Transform> context = new List<Transform>();
-
-        Collider[] contextColliders = Physics.OverlapSphere(agent.transform.position, neighborRadius);
-        foreach(Collider c in contextColliders)
+        
+        //check neighbor
+        //Collider[] contextColliders = Physics.OverlapSphere(agent.transform.position, neighborRadius);
+        int maxColliders = 50;
+        Collider[] contextColliders = new Collider[maxColliders];
+        int numColliders = Physics.OverlapSphereNonAlloc(agent.transform.position, neighborRadius, contextColliders);
+        
+        for(int i=0; i < numColliders; i++)
         {
-            if (c != agent.AgentCollider) context.Add(c.transform);
+            if (contextColliders[i]!=null && contextColliders[i] != agent.AgentCollider) 
+                context.Add(contextColliders[i].transform);
         }
 
         return context;

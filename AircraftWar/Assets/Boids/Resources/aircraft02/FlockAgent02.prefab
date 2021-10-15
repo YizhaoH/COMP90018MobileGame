@@ -2187,6 +2187,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4559951363181900471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 591687634576710327}
+  m_Layer: 0
+  m_Name: ShootPoint01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &591687634576710327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559951363181900471}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.55, y: -1.1, z: -2.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6128482461832601471}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4723537123767154316
 GameObject:
   m_ObjectHideFlags: 0
@@ -3726,6 +3756,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &8010639719649961472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6985231104983367267}
+  m_Layer: 0
+  m_Name: ShootPoint02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6985231104983367267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8010639719649961472}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.55, y: -1.1, z: -2.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6128482461832601471}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8292811657942392639
 GameObject:
   m_ObjectHideFlags: 0
@@ -3819,9 +3879,11 @@ GameObject:
   - component: {fileID: 2861576032034808770}
   - component: {fileID: 8265252066368884627}
   - component: {fileID: 6750080314229093552}
+  - component: {fileID: 5009845971091762120}
+  - component: {fileID: 6450667552301986125}
   m_Layer: 0
   m_Name: FlockAgent02
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3838,6 +3900,8 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 8395504046796470912}
+  - {fileID: 591687634576710327}
+  - {fileID: 6985231104983367267}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3882,6 +3946,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5922c5f593060a498805ab807d475c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateSpeed: 1.2
+  gun: {fileID: 0}
+  missleGun: {fileID: 6450667552301986125}
+--- !u!135 &5009845971091762120
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8464847957296799518}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 8
+  m_Center: {x: 0, y: -0.25, z: -0.76}
+--- !u!114 &6450667552301986125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8464847957296799518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdbf7fccb16d5834f9ca754e053e45e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 0
+  maxDetectRange: 0
+  cooldownSpeed: 5
+  fireRate: 25
+  recoilCooldown: 1
+  missle: {fileID: 2244777227064348208, guid: 7992983b5d197f747babf7d0ccac8691, type: 3}
+  shootPointObj01: {fileID: 4559951363181900471}
+  shootPointObj02: {fileID: 8010639719649961472}
+  gunshot: {fileID: 0}
+  singleShot: {fileID: 0}
 --- !u!1 &8516667126553639662
 GameObject:
   m_ObjectHideFlags: 0

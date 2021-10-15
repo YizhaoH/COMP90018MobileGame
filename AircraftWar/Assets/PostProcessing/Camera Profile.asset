@@ -111,7 +111,7 @@ MonoBehaviour:
     value: 0.8
   softKnee:
     overrideState: 1
-    value: 0.495
+    value: 0.552
   clamp:
     overrideState: 0
     value: 65472
@@ -238,7 +238,7 @@ MonoBehaviour:
     value: 100
   lift:
     overrideState: 1
-    value: {x: 0.9051064, y: 0.88929766, z: 1, w: -0.021186441}
+    value: {x: 0.9824878, y: 0.8863488, z: 1, w: -0.021186441}
   gamma:
     overrideState: 1
     value: {x: 0.9169538, y: 0.9517333, z: 1, w: 0}

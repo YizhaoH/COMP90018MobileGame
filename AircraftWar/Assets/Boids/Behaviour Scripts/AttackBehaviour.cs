@@ -5,30 +5,52 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Flock/Behaviour/Attack")]
 public class AttackBehaviour : FlockBehaviour
 {
+
+    Vector3 currVelocity;
+    public float agentSmoothTime = 0.3f;
     public override Vector3 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
-        //if no neighbors
-        if(context.Count ==0) return Vector3.zero;
+        
 
         //add all points together and average
         Vector3 attackMove = Vector3.zero;
-        foreach (Transform item in context)
+        float dis = agent.DistanceToTarget(flock.target);
+        float angle = agent.AngleWithPlayer(flock.target);
+        if( dis>=flock.playerStopDetectionRadius && 
+            dis<flock.playerDetectionRadius &&
+            angle<=flock.playerDetectionDegree )
         {
-            if (item.tag != "Player") 
-            {
-                continue;
-            }
+            attackMove = flock.target.transform.position - agent.transform.position;
+            //Debug.DrawRay(agent.transform.position, attackMove, Color.green, 0.5f);
+        }
+
+        //if no neighbors and no player
+        if (context.Count == 0 && attackMove == Vector3.zero)
+        {
+            if(agent.gun != null)
+                agent.gun.attack = false;
             else
+                agent.missleGun.attack = false;
+            return Vector3.zero;
+        }
+
+        if(Random.Range(0,5000) < 30)
+        {
+            attackMove = Vector3.zero;
+        }
+
+        if( attackMove != Vector3.zero)
+        {
+            //attackMove = Vector3.SmoothDamp(agent.transform.forward, attackMove, ref currVelocity, agentSmoothTime);
+            if( angle <= 10)
             {
-                Vector3 dis = item.position - agent.transform.position;
-                float angle = Mathf.Abs(Vector3.Angle(dis, agent.transform.forward));
-                // player in radius && player in sight angle degree
-                if (dis.sqrMagnitude < flock.SquareAvoidanceRadius && angle<flock.playerDetectionDegree)
-                {
-                    attackMove = dis;
-                }
+                if(agent.gun != null)
+                    agent.gun.attack = true;
+                else
+                    agent.missleGun.attack = true;
             }
         }
+            
         return attackMove;
     }
 }
