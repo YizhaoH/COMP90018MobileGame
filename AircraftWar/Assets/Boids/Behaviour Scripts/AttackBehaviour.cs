@@ -42,13 +42,11 @@ public class AttackBehaviour : FlockBehaviour
         if( attackMove != Vector3.zero)
         {
             //attackMove = Vector3.SmoothDamp(agent.transform.forward, attackMove, ref currVelocity, agentSmoothTime);
-            if( angle <= 10)
-            {
-                if(agent.gun != null)
-                    agent.gun.attack = true;
-                else
-                    agent.missleGun.attack = true;
-            }
+            if(agent.gun != null && angle<10)
+                agent.gun.attack = true;
+            if(agent.missleGun != null && angle<35)
+                agent.missleGun.attack = true;
+            
         }
             
         return attackMove;

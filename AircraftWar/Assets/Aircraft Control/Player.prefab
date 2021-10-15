@@ -101,7 +101,7 @@ MonoBehaviour:
   steeringSmoothing: 1.5
   thrustSmoothing: 2
   model: {fileID: 3861053520749743097}
-  mat: {fileID: 0}
+  mat: {fileID: 2100000, guid: db90d5a1991314743895130139e3c41b, type: 2}
 --- !u!135 &87020064
 SphereCollider:
   m_ObjectHideFlags: 0

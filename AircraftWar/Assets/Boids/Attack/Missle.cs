@@ -31,12 +31,23 @@ public class Missle : MonoBehaviour
         if (!RocketRgb) //If we have not set the Rigidbody, do nothing..
             return;
 
-        RocketRgb.velocity = rocketLocalTrans.forward * rocketFlySpeed;
+        //RocketRgb.velocity = rocketLocalTrans.forward * rocketFlySpeed;
 
         //Now Turn the Rocket towards the Target
-        var rocketTargetRot = Quaternion.LookRotation(RocketTarget.transform.position - rocketLocalTrans.position);
+        //var rocketTargetRot = Quaternion.LookRotation(RocketTarget.transform.position - rocketLocalTrans.position);
 
-        RocketRgb.MoveRotation(Quaternion.RotateTowards(rocketLocalTrans.rotation, rocketTargetRot, turnSpeed));
+        //RocketRgb.MoveRotation(Quaternion.RotateTowards(rocketLocalTrans.rotation, rocketTargetRot, turnSpeed));
+
+        float dis = (RocketTarget.transform.position - this.transform.position).sqrMagnitude;
+        if(dis>400)
+        {
+            this.transform.LookAt(RocketTarget.transform);
+            this.transform.position += (RocketTarget.transform.position - this.transform.position).normalized * rocketFlySpeed * Time.deltaTime;
+        }
+        else
+        {
+            RocketRgb.velocity = rocketLocalTrans.forward * rocketFlySpeed;
+        }
 
         Destroy(this.gameObject, duration);
     }
@@ -48,7 +59,7 @@ public class Missle : MonoBehaviour
             Debug.Log("Missle hit player");
             Rigidbody plRgb = collision.gameObject.GetComponent<Rigidbody>();
             if (plRgb)
-                plRgb.AddForceAtPosition(this.transform.forward * 100f, plRgb.position);
+                plRgb.AddForceAtPosition(this.transform.forward * 30f, plRgb.position);
 
             //Deactivate Rocket..
             //this.gameObject.SetActive(false);

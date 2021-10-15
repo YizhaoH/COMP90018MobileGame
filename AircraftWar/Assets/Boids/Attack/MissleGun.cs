@@ -8,7 +8,6 @@ public class MissleGun : Weapon
 
     public float fireRate=5f;
 
-    public float recoilCooldown=1f;
 
     public GameObject missle;
 
@@ -24,7 +23,7 @@ public class MissleGun : Weapon
     // Update is called once per frame
     void Update()
     {
-        cooldownSpeed += Time.deltaTime * 30f;
+        cooldownSpeed += Time.deltaTime * 60f;
         if(attack)
         {
             shootPoint01 = shootPointObj01.transform.position;
@@ -34,7 +33,6 @@ public class MissleGun : Weapon
                 Shoot();
                 //gunshot.PlayOneShot(singleShot);
                 cooldownSpeed = 0;
-                recoilCooldown = 1;
             }
         }
     }
@@ -55,8 +53,10 @@ public class MissleGun : Weapon
                 return;
             }
             Debug.Log("Missle Shoot Shoot Shoot!");
-            GameObject tempMissle = Instantiate(missle, shootPoint01, fireRotation);
-            tempMissle.transform.parent = this.transform;
+            GameObject tempMissle01 = Instantiate(missle, shootPoint01, fireRotation);
+            tempMissle01.transform.parent = this.transform;
+            GameObject tempMissle02 = Instantiate(missle, shootPoint01, fireRotation);
+            tempMissle02.transform.parent = this.transform;
         
         }
     }

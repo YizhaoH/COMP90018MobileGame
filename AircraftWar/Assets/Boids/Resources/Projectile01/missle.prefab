@@ -49,8 +49,8 @@ MonoBehaviour:
   RocketTarget: {fileID: 0}
   RocketRgb: {fileID: 8605484797070784533}
   duration: 5
-  turnSpeed: 15
-  rocketFlySpeed: 100
+  turnSpeed: 10
+  rocketFlySpeed: 75
 --- !u!54 &8605484797070784533
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -75,7 +75,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2244777227064348208}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 10

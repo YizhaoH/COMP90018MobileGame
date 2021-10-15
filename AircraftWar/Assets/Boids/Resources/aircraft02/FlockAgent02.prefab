@@ -3876,7 +3876,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6128482461832601471}
-  - component: {fileID: 2861576032034808770}
   - component: {fileID: 8265252066368884627}
   - component: {fileID: 6750080314229093552}
   - component: {fileID: 5009845971091762120}
@@ -3905,19 +3904,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2861576032034808770
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8464847957296799518}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10, y: 3, z: 15}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8265252066368884627
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3977,8 +3963,7 @@ MonoBehaviour:
   attack: 0
   maxDetectRange: 0
   cooldownSpeed: 5
-  fireRate: 25
-  recoilCooldown: 1
+  fireRate: 35
   missle: {fileID: 2244777227064348208, guid: 7992983b5d197f747babf7d0ccac8691, type: 3}
   shootPointObj01: {fileID: 4559951363181900471}
   shootPointObj02: {fileID: 8010639719649961472}
