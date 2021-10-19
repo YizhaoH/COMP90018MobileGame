@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Missle : MonoBehaviour
 {
     [Header("Setup")]
@@ -13,6 +14,7 @@ public class Missle : MonoBehaviour
     public float turnSpeed = 3f;
     public float rocketFlySpeed = 100f;
 
+    private PlayerControl playerControl;
     private Transform rocketLocalTrans;
 
     // Start is called before the first frame update
@@ -23,6 +25,9 @@ public class Missle : MonoBehaviour
             Debug.Log("Please set the Rocket Target");
         
         rocketLocalTrans = GetComponent<Transform>();
+        playerControl = RocketTarget.GetComponent<PlayerControl>();
+        if(!playerControl)
+            Debug.Log("Can not find playerControl");
     }
 
 
@@ -39,7 +44,7 @@ public class Missle : MonoBehaviour
         //RocketRgb.MoveRotation(Quaternion.RotateTowards(rocketLocalTrans.rotation, rocketTargetRot, turnSpeed));
 
         float dis = (RocketTarget.transform.position - this.transform.position).sqrMagnitude;
-        if(dis>400)
+        if(dis>100)
         {
             this.transform.LookAt(RocketTarget.transform);
             this.transform.position += (RocketTarget.transform.position - this.transform.position).normalized * rocketFlySpeed * Time.deltaTime;
@@ -47,6 +52,9 @@ public class Missle : MonoBehaviour
         else
         {
             RocketRgb.velocity = rocketLocalTrans.forward * rocketFlySpeed;
+            var rocketTargetRot = Quaternion.LookRotation(RocketTarget.transform.position - rocketLocalTrans.position);
+            RocketRgb.MoveRotation(Quaternion.RotateTowards(rocketLocalTrans.rotation, rocketTargetRot, turnSpeed));
+            Destroy(this.gameObject, 0.5f);
         }
 
         Destroy(this.gameObject, duration);
@@ -59,10 +67,14 @@ public class Missle : MonoBehaviour
             Debug.Log("Missle hit player");
             Rigidbody plRgb = collision.gameObject.GetComponent<Rigidbody>();
             if (plRgb)
-                plRgb.AddForceAtPosition(this.transform.forward * 30f, plRgb.position);
+                plRgb.AddForceAtPosition(this.transform.forward * 15f, plRgb.position);
 
             //Deactivate Rocket..
             //this.gameObject.SetActive(false);
+            if(Random.Range(0,1000) < 500)
+                playerControl.EnalbeParticleSystem("getHitLeft");
+            else
+                playerControl.EnalbeParticleSystem("getHitRight");
             Destroy(this.gameObject);
         }
     }

@@ -5,6 +5,8 @@ using UnityEngine;
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Rigidbody))]
 
+
+    
 public class PlayerControl : MonoBehaviour
 {
     public float moveSpeed = 60;
@@ -139,4 +141,28 @@ public class PlayerControl : MonoBehaviour
         //    model.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, 90), 0.05f);
             
     }
+
+    public void EnalbeParticleSystem(string name)
+    {
+        Transform child = this.transform.Find(name);
+        ParticleSystem ps = child.GetComponent<ParticleSystem>();
+        if(ps)
+        {
+            ps.Play();
+        }
+    }
+
+    public void DisalbeParticleSystem(string name)
+    {
+        Transform child = this.transform.Find(name);
+        ParticleSystem ps = child.GetComponent<ParticleSystem>();
+        if(ps)
+        {
+            ps.Stop();
+        }
+    }
+
+    
+    
 }
+

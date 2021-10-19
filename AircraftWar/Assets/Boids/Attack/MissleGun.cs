@@ -8,6 +8,8 @@ public class MissleGun : Weapon
 
     public float fireRate=5f;
 
+    private float shootCooldown = 3;
+    private bool canShoot = true;
 
     public GameObject missle;
 
@@ -28,15 +30,24 @@ public class MissleGun : Weapon
         {
             shootPoint01 = shootPointObj01.transform.position;
             shootPoint02 = shootPointObj02.transform.position;
-            if (cooldownSpeed >= fireRate)
+            if (cooldownSpeed >= fireRate && canShoot)
             {
+                
                 Shoot();
+                cooldownSpeed = 0f;
+                    
                 //gunshot.PlayOneShot(singleShot);
-                cooldownSpeed = 0;
+                StartCoroutine(CoolDownFunction());
             }
         }
     }
 
+    IEnumerator CoolDownFunction()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(shootCooldown);
+        canShoot = true;
+    }
 
     protected override void Shoot()
     {
@@ -57,7 +68,6 @@ public class MissleGun : Weapon
             tempMissle01.transform.parent = this.transform;
             GameObject tempMissle02 = Instantiate(missle, shootPoint01, fireRotation);
             tempMissle02.transform.parent = this.transform;
-        
         }
     }
 }

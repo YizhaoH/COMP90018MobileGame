@@ -16,10 +16,10 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.42
+    m_Value: 0.09
   contrast:
     m_OverrideState: 1
-    m_Value: -1.95
+    m_Value: -1.84
     min: -100
     max: 100
   colorFilter:
@@ -106,7 +106,7 @@ MonoBehaviour:
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 1.15
+    m_Value: 0.88
     min: 0
   scatter:
     m_OverrideState: 1
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   temperature:
     m_OverrideState: 1
-    m_Value: 1.29
+    m_Value: -1.69
     min: -100
     max: 100
   tint:

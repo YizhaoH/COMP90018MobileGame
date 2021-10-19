@@ -12,13 +12,13 @@ public class MoveBullet : MonoBehaviour
     public GameObject dirt;
 
     public GameObject blood;
-    public float bulletMaxDis = 1500f;
+    public float bulletMaxDis = 1200f;
     float sqrMaxDis;
-
 
     public int speed;
     Rigidbody rb;
-    
+    public bool isPlayer = false;
+
 
     //public AudioSource myShot;
     // Start is called before the first frame update
@@ -44,25 +44,34 @@ public class MoveBullet : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    
-    /**
-    void OnCollisionEnter(Collision col)
-    {
-        Debug.Log("Collision!");
-        Destroy(this.gameObject);
-    }
-    **/
+
     
     void OnTriggerStay(Collider other) 
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && !isPlayer)
         {
             //col.gameObject.GetComponent<Health>().currentHealth -= 20;
             //GameObject newBlood = Instantiate(blood, this.transform.position, this.transform.rotation);
             //newBlood.transform.parent = col.transform;
-            Debug.Log("Bullet Hit player!");
+            //Debug.Log("Bullet Hit player!");
+            
             Destroy(this.gameObject);
         }
+
+        if(other.gameObject.CompareTag("Enemy") && isPlayer)
+        {
+            //Debug.Log("hit enemy");
+            //play hit sound effect
+            Destroy(this.gameObject);
+        }
+
+        if(other.gameObject.CompareTag("Terrain") && isPlayer)
+        {
+            //Debug.Log("hit terrain");
+            //play hit sound effect
+            Destroy(this.gameObject);
+        }
+
     }
     
 }

@@ -3963,7 +3963,7 @@ MonoBehaviour:
   attack: 0
   maxDetectRange: 0
   cooldownSpeed: 5
-  fireRate: 35
+  fireRate: 15
   missle: {fileID: 2244777227064348208, guid: 7992983b5d197f747babf7d0ccac8691, type: 3}
   shootPointObj01: {fileID: 4559951363181900471}
   shootPointObj02: {fileID: 8010639719649961472}

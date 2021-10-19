@@ -21,6 +21,9 @@ public class Gun : Weapon
     public GameObject shootPointObj;
     Vector3 shootPoint;
 
+    private float shootCooldown = 0.2f;
+    private bool canShoot = true;
+
     public AudioSource gunshot;
 
     public AudioClip singleShot;
@@ -34,12 +37,14 @@ public class Gun : Weapon
         {
             accuracy += Time.deltaTime * 2f;
             shootPoint = shootPointObj.transform.position;
-            if (cooldownSpeed >= fireRate)
+            if (cooldownSpeed >= fireRate && canShoot)
             {
                 Shoot();
                 //gunshot.PlayOneShot(singleShot);
                 cooldownSpeed = 0;
                 recoilCooldown = 1;
+
+                StartCoroutine(CoolDownFunction());
             }
         }
         else
@@ -53,6 +58,12 @@ public class Gun : Weapon
         }
     }
 
+    IEnumerator CoolDownFunction()
+    {
+        canShoot = false;
+        yield return new WaitForSeconds(shootCooldown);
+        canShoot = true;
+    }
 
     protected override void Shoot()
     {

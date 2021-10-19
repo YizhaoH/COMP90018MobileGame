@@ -48,8 +48,8 @@ MonoBehaviour:
   behaviour: {fileID: 11400000, guid: f0a9661cb5c2b8740b40817e4d312564, type: 2}
   startingCount: 15
   AgentDensity: 24.4
-  driveFactor: 39.7
-  maxSpeed: 80
+  driveFactor: 48
+  maxSpeed: 100
   neighborRadius: 39.1
   avoidanceRadiusMultiplier: 0.716
   playerDetectionRadius: 1200
@@ -158,8 +158,8 @@ MonoBehaviour:
   behaviour: {fileID: 11400000, guid: f0a9661cb5c2b8740b40817e4d312564, type: 2}
   startingCount: 15
   AgentDensity: 21.6
-  driveFactor: 39.7
-  maxSpeed: 80
+  driveFactor: 49.3
+  maxSpeed: 100
   neighborRadius: 38.2
   avoidanceRadiusMultiplier: 0.661
   playerDetectionRadius: 1200
