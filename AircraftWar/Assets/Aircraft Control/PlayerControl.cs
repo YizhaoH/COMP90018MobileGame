@@ -80,6 +80,7 @@ public class PlayerControl : MonoBehaviour
         smoothInputThrust = Mathf.Lerp(smoothInputThrust, rawInputThrust, Time.deltaTime * thrustSmoothing);
         thrustInput = smoothInputThrust;
     }
+
     private void Move() {
         rb.velocity = transform.forward * moveSpeed;
     }
@@ -125,10 +126,9 @@ public class PlayerControl : MonoBehaviour
         Vector3 newTorque = new Vector3(steeringInput.x * horizontalSpeed, -steeringInput.z * verticalSpeed, 0);
         //newTorque = new Vector3(0, -steeringInput.z * verticalSpeed, 0);
         
-
         rb.AddRelativeTorque(newTorque);
 
-        rb.rotation = Quaternion.Slerp(rb.rotation, Quaternion.Euler(new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, 0)), 0.5f);
+        rb.rotation = Quaternion.Slerp(rb.rotation, Quaternion.Euler(new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, 0)), 0.2f);
         
         TurnModel();
     }

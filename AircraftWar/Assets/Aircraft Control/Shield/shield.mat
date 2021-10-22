@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: shield
-  m_Shader: {fileID: 4800000, guid: 0c75c6064c338814382407c14d71327e, type: 3}
+  m_Shader: {fileID: 4800000, guid: bab5e808471405c4d87fd993b22ce42c, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -41,7 +41,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: a2ff4170b3558064dbe7a9ee13103e8f, type: 3}
-        m_Scale: {x: 2, y: 2}
+        m_Scale: {x: 3, y: 3}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
         m_Texture: {fileID: 2800000, guid: f34af94a40835c842b2eefcc002f0738, type: 3}
@@ -63,14 +63,14 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _Distort: 0
+    - _Distort: 64.7
     - _DstBlend: 0
-    - _Fresnel: 100
-    - _FresnelWidth: 1.08
+    - _Fresnel: 39.8
+    - _FresnelWidth: 1.1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _IntersectionThreshold: 0.264
+    - _IntersectionThreshold: 0.703
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -80,10 +80,11 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Threshold: 0
+    - _Threshold: 0.897
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MainColor: {r: 0.35857958, g: 0.61591625, b: 0.9622642, a: 1}
+    - _MainColor: {r: 0.37864897, g: 0.5687188, b: 0.6320754, a: 0}
+  m_BuildTextureStacks: []
