@@ -137,7 +137,7 @@ public class FirebaseManager : MonoBehaviour
             yield return new WaitForSeconds(2);
 
             usernameText.text = User.DisplayName;
-            UIManager.instance.PersonalPage();
+            UIManager.instance.MainMenu();
             confirmLoginText.text = "";
             ClearLoginFeilds();
             ClearRegisterFeilds();
