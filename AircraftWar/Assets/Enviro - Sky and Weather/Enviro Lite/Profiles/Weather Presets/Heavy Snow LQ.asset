@@ -152,12 +152,15 @@ MonoBehaviour:
   fogSunBlocking: 0
   moonIntensity: 0
   effectSystems:
-  - prefab: {fileID: 1000012464414300, guid: 5ed4ce1f9abfa944fb0462b08c373c93, type: 3}
-    localPositionOffset: {x: 0, y: 20, z: 0}
+  - prefab: {fileID: 1000012464414300, guid: 35c2de188ee7f814bb14d727a3388085, type: 3}
+    localPositionOffset: {x: 15, y: 35, z: 15}
     localRotationOffset: {x: -90, y: 0, z: -180}
   - prefab: {fileID: 1000013790200260, guid: 31dd8ccc1924c534e8a366c92c8410f3, type: 3}
-    localPositionOffset: {x: 0, y: 20, z: 0}
+    localPositionOffset: {x: 15, y: 20, z: 15}
     localRotationOffset: {x: -90, y: 0, z: -180}
+  - prefab: {fileID: 1000013790200260, guid: d7199e3069614314880abb4328c0c665, type: 3}
+    localPositionOffset: {x: 10, y: 5, z: 10}
+    localRotationOffset: {x: 90, y: 0, z: -180}
   WindStrenght: 0.203
   wetnessLevel: 0
   snowLevel: 1

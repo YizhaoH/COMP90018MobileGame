@@ -36,6 +36,7 @@ public class CloudSpawner : MonoBehaviour
                 GameObject newObject = Instantiate(prefab, pos, Quaternion.Euler(new Vector3(0, Random.Range(0, 360), 0))) as GameObject;  // instatiate the object
                 float randomScale = Random.Range(6, 12);
                 newObject.transform.localScale = new Vector3(randomScale,  randomScale, randomScale); // change its local scale in x y z format
+                newObject.transform.parent = this.transform;
             }
         }
 

@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using Firebase;
+using Firebase.Auth;
 
 public class UIManager : MonoBehaviour
 {
@@ -33,5 +37,12 @@ public class UIManager : MonoBehaviour
     {
         loginUI.SetActive(false);
         registerUI.SetActive(true);
+    }
+
+    public void GameStart()
+    {
+        GameObject authManger = GameObject.FindWithTag("AuthManger");
+        AuthManager auth = authManger.GetComponent<AuthManager>();
+        FirebaseUser fuser = auth.User;
     }
 }

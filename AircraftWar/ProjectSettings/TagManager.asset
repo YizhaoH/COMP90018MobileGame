@@ -7,6 +7,9 @@ TagManager:
   - Shore
   - Cloud
   - Terrain
+  - Ground
+  - Boundary
+  - Enemy
   layers:
   - Default
   - TransparentFX

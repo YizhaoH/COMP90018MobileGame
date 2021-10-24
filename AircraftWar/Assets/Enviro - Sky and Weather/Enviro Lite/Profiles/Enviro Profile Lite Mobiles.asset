@@ -1836,7 +1836,7 @@ MonoBehaviour:
     auroraSpeed: 0.005
   viewMode: 3
   viewModeLW: 5
-  showPlayerSetup: 0
+  showPlayerSetup: 1
   showRenderingSetup: 0
   showComponentsSetup: 1
   showTimeUI: 0
