@@ -3,7 +3,12 @@ guid: cdbf7fccb16d5834f9ca754e053e45e0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - missle: {instanceID: 0}
+  - shootPointObj01: {instanceID: 0}
+  - shootPointObj02: {instanceID: 0}
+  - gunshot: {instanceID: 0}
+  - singleShot: {fileID: 8300000, guid: 7b8d8ce2d9529684489411b691bcad9f, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
