@@ -8,6 +8,8 @@ public class AlignmentBehaviour : FlockBehaviour
 
     public override Vector3 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
+        if(agent.isDead) return Vector3.zero;
+        
         //if no neighbors main current alignment
         if(context.Count ==0) return agent.transform.forward;
 

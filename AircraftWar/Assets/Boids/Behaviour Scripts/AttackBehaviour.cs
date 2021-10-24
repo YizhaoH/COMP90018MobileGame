@@ -10,7 +10,7 @@ public class AttackBehaviour : FlockBehaviour
     public float agentSmoothTime = 0.3f;
     public override Vector3 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
-        
+        if(agent.isDead) return Vector3.zero;
 
         //add all points together and average
         Vector3 attackMove = Vector3.zero;

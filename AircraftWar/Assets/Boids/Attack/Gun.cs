@@ -76,7 +76,7 @@ public class Gun : Weapon
 
         fireRotation = Quaternion.RotateTowards(fireRotation, Random.rotation, Random.Range(0.0f, currentSpread));
         
-        Debug.Log("Bullet Shoot Shoot Shoot!");
+        //Debug.Log("Bullet Shoot Shoot Shoot!");
         if (Physics.Raycast(transform.position, fireRotation * Vector3.forward, out hit, maxDetectRange))
         {
             if(hit.transform.tag == "Enemy" || hit.transform.tag=="Boundary")

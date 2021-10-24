@@ -63,7 +63,8 @@ public class MissleGun : Weapon
             {
                 return;
             }
-            Debug.Log("Missle Shoot Shoot Shoot!");
+            //Debug.Log("Missle Shoot Shoot Shoot!");
+            
             GameObject tempMissle01 = Instantiate(missle, shootPoint01, fireRotation);
             tempMissle01.transform.parent = this.transform;
             GameObject tempMissle02 = Instantiate(missle, shootPoint01, fireRotation);

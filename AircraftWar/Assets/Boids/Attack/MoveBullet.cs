@@ -54,7 +54,8 @@ public class MoveBullet : MonoBehaviour
             //GameObject newBlood = Instantiate(blood, this.transform.position, this.transform.rotation);
             //newBlood.transform.parent = col.transform;
             //Debug.Log("Bullet Hit player!");
-            
+            HealthHandler healthHandler = other.gameObject.transform.Find("Health Handler").GetComponent<HealthHandler>();
+            healthHandler.GetHealthSystem().getDamage(2);
             Destroy(this.gameObject);
         }
 
@@ -62,6 +63,8 @@ public class MoveBullet : MonoBehaviour
         {
             //Debug.Log("hit enemy");
             //play hit sound effect
+            HealthHandler healthHandler = other.gameObject.transform.Find("Health Handler").GetComponent<HealthHandler>();
+            healthHandler.GetHealthSystem().getDamage(5);
             Destroy(this.gameObject);
         }
 

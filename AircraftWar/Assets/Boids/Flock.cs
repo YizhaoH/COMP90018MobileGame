@@ -77,6 +77,8 @@ public class Flock : MonoBehaviour
     {
         foreach (FlockAgent agent in agents)
         {
+            if(agent.isDead) continue;
+
             List<Transform> context = GetNearbyObject(agent);
 
             Vector3 move = behaviour.CalculateMove(agent, context, this);
@@ -86,14 +88,14 @@ public class Flock : MonoBehaviour
                 move = move.normalized * maxSpeed;
             }
             agent.Move(move);
-
         }
     }
 
     List<Transform> GetNearbyObject(FlockAgent agent)
     {
-        List<Transform> context = new List<Transform>();
-        
+        if (agent.isDead) return null;
+
+        List<Transform> context = new List<Transform>(); 
         //check neighbor
         //Collider[] contextColliders = Physics.OverlapSphere(agent.transform.position, neighborRadius);
         int maxColliders = 50;

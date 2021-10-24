@@ -13,6 +13,8 @@ public class CompositeBehaviour : FlockBehaviour
 
     public override Vector3 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
+        if(agent.isDead) return Vector3.zero;
+        
         if (weights.Length != behaviours.Length)
         {
             Debug.LogError("Data mismatch in "+ name ,this);

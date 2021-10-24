@@ -16,6 +16,26 @@ public class FlockAgent : MonoBehaviour
     public Gun gun;
     public MissleGun missleGun;
 
+    private HealthSystem healthSystem;
+    public bool isDead = false;
+
+    public void Setup(HealthSystem hs)
+    {
+        this.healthSystem = hs;
+        healthSystem.OnHealthChanged += HealthSystem_OnHealthChanged;
+    }
+
+    private void HealthSystem_OnHealthChanged(object sender, System.EventArgs e)
+    {
+        Debug.Log("flock agent health change!");
+        if(healthSystem.getHealth()<=0)
+        {
+            transform.Find("Model").gameObject.SetActive(false);
+            EnalbeParticleSystem("PS_Destory");
+            Dead();
+        }
+    }
+
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -59,5 +79,23 @@ public class FlockAgent : MonoBehaviour
         float angle = Vector3.Angle(vector, transform.forward);
         return Mathf.Abs(angle);
     }
+
+    public void EnalbeParticleSystem(string name)
+    {
+        Transform child = this.transform.Find(name);
+        ParticleSystem ps = child.GetComponent<ParticleSystem>();
+        if(ps)
+        {
+            ps.Play();
+        }
+    }
+
+    public void Dead()
+    {
+        isDead = true;
+        Destroy(this.gameObject, 1f);
+    }
+
+
 }
 

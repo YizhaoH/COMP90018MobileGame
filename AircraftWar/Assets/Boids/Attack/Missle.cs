@@ -64,13 +64,14 @@ public class Missle : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Missle hit player");
+            //Debug.Log("Missle hit player");
+            HealthHandler healthHandler = collision.gameObject.transform.Find("Health Handler").GetComponent<HealthHandler>();
+            healthHandler.GetHealthSystem().getDamage(5);
             Rigidbody plRgb = collision.gameObject.GetComponent<Rigidbody>();
             if (plRgb)
                 plRgb.AddForceAtPosition(this.transform.forward * 15f, plRgb.position);
 
             //Deactivate Rocket..
-            //this.gameObject.SetActive(false);
             if(Random.Range(0,1000) < 500)
                 playerControl.EnalbeParticleSystem("getHitLeft");
             else

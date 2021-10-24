@@ -11,6 +11,8 @@ public class CohensionBehaviour : FilteredFlockBehaviour
     //find the centre of all neighbors and try to move there
     public override Vector3 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
+        if(agent.isDead) return Vector3.zero;
+        
         //if no neighbors
         if(context.Count ==0) return Vector3.zero;
 
