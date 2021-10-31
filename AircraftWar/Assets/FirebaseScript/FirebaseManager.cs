@@ -38,7 +38,8 @@ public class FirebaseManager : MonoBehaviour
     public TMP_Text killedText;
     public TMP_InputField usernameField;
 
-
+    UnityEngine.TouchScreenKeyboard keyboard;
+    public static string keyboardText = "";
     private void Awake()
     {
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>

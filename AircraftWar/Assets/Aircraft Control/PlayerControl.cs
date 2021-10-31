@@ -15,7 +15,8 @@ public class PlayerControl : MonoBehaviour
     public float horizontalSpeed = 30;
     public float verticalSpeed = 15;
     private Vector3 steeringInput;
-
+    public float MinX_rotation = -40F;//镜头绕自身x轴旋转角度极限  
+    public float MaxX_rotation = 10F;//镜头绕自身x轴旋转角度极限
     public float leanAmount_X = 90;
     public float leanAmount_Y = 30;
 
@@ -30,8 +31,12 @@ public class PlayerControl : MonoBehaviour
     public Transform model;
     public Material mat;
     private bool isBlinking = false;
+
+    public HealthSystem healthSystem;
+
     private void Awake() {
         rb = GetComponent<Rigidbody>();
+        healthSystem = GetComponent<HealthSystem>();
     }
 
     private void OnEnable() {
@@ -120,16 +125,29 @@ public class PlayerControl : MonoBehaviour
             float duration = 0.08f;
             if(!isBlinking) StartCoroutine(BlinkRoutine(duration));
         }
+        if(other.transform.tag == "Terrain")
+        {
+            Debug.Log("game over");
+            healthSystem.health -= 1000;
+        }
     }
 
     private void Turn(){
         Vector3 newTorque = new Vector3(steeringInput.x * horizontalSpeed, -steeringInput.z * verticalSpeed, 0);
-        //newTorque = new Vector3(0, -steeringInput.z * verticalSpeed, 0);
-        
-        rb.AddRelativeTorque(newTorque);
 
-        rb.rotation = Quaternion.Slerp(rb.rotation, Quaternion.Euler(new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, 0)), 0.2f);
-        
+
+        rb.AddRelativeTorque(newTorque);
+        //if (model.eulerAngles.x > 340 && model.eulerAngles.x < 360)
+        float angleX = 0F;
+        if (transform.localEulerAngles.x > 180)
+            angleX = transform.localEulerAngles.x - 360;
+        else
+            angleX = transform.localEulerAngles.x;
+
+        float X_rotation = Mathf.Clamp(angleX, MinX_rotation, MaxX_rotation);//将旋转值限制在极限值以内
+        //rb.rotation = Quaternion.Slerp(rb.rotation, Quaternion.Euler(new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, 0)), 0.5f);
+        rb.rotation = Quaternion.Slerp(rb.rotation, Quaternion.Euler(new Vector3(X_rotation, transform.localEulerAngles.y, 0)), 0.5f);
+        //Debug.Log(angleX + " " + rb.position);
         TurnModel();
     }
 
@@ -161,7 +179,6 @@ public class PlayerControl : MonoBehaviour
             ps.Stop();
         }
     }
-
     
     
 }

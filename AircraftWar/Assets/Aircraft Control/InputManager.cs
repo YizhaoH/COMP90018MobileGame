@@ -8,40 +8,53 @@ public class InputManager : MonoBehaviour
     public static InputManager Instance;
     public Joystick joystick;
     public delegate void InputSpaceEventHandler(float space);
-    private InputSpaceEventHandler inputSpaceEventHandler;    
-    public event InputSpaceEventHandler OnInputSpace 
+    private InputSpaceEventHandler inputSpaceEventHandler;
+    //public float initialPos = 0.0f;
+    public event InputSpaceEventHandler OnInputSpace
+    {
+        add
         {
-            add 
-            {
-                inputSpaceEventHandler += value;
-            }
-            remove 
-            {
-                inputSpaceEventHandler -= value;
-            }
+            inputSpaceEventHandler += value;
         }
+        remove
+        {
+            inputSpaceEventHandler -= value;
+        }
+    }
     public event Action<float, float> OnInputHorizontalOrVertical;
+    //private bool start = true;
 
-    private void Awake() 
+
+    private void Awake()
     {
         Instance = this;
+
     }
 
     private void Update()
     {
-        if (inputSpaceEventHandler != null) {
+        //if (start)
+        //{
+        //  initialPos = Input.acceleration.z;
+        //start = false;
+        //}
+
+        if (inputSpaceEventHandler != null)
+        {
             inputSpaceEventHandler(Input.GetAxisRaw("Space"));
         }
 
-        if (OnInputHorizontalOrVertical != null) {
-            //OnInputHorizontalOrVertical(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));            
-           OnInputHorizontalOrVertical(joystick.Horizontal, joystick.Vertical);
-           
-               //OnInputHorizontalOrVertical = null;
+        if (OnInputHorizontalOrVertical != null)
+        {
+            //OnInputHorizontalOrVertical(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));   //使用键盘输入         
+            //OnInputHorizontalOrVertical(joystick.Horizontal, joystick.Vertical); // 使用摇杆输入
+            OnInputHorizontalOrVertical(Input.acceleration.x*2, -Input.acceleration.z*2 - 0.75f);
+            Debug.Log(Input.acceleration.z);
+            //OnInputHorizontalOrVertical = null;
         }
         //if (Input.touchCount > 0) {
-          //  Vector3 pos = cam.ScreenToWorldPoint(Input.GetTouch(0).position);
-            //transform.position = pos;
+        //  Vector3 pos = cam.ScreenToWorldPoint(Input.GetTouch(0).position);
+        //transform.position = pos;
         //}
     }
 }

@@ -19,6 +19,8 @@ public class FlockAgent : MonoBehaviour
     private HealthSystem healthSystem;
     public bool isDead = false;
 
+    public ScoreManager scoreManager;
+
     public void Setup(HealthSystem hs)
     {
         this.healthSystem = hs;
@@ -32,7 +34,12 @@ public class FlockAgent : MonoBehaviour
         {
             transform.Find("Model").gameObject.SetActive(false);
             EnalbeParticleSystem("PS_Destory");
+            if (!isDead)
+            {
+                scoreManager.score += 1;
+            }
             Dead();
+            
         }
     }
 
@@ -40,6 +47,12 @@ public class FlockAgent : MonoBehaviour
     void OnEnable()
     {
         agentCollider = GetComponent<Collider>();
+
+        scoreManager = GameObject.FindWithTag("Score").GetComponent<ScoreManager>();
+        if (scoreManager == null)
+         {
+            Debug.Log("null");
+         }
     }
 
     public void Initialize(Flock flock)
