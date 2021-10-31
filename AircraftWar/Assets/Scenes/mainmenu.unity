@@ -7146,6 +7146,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1041150964}
+  - component: {fileID: 1041150963}
   m_Layer: 0
   m_Name: GPSManager
   m_TagString: Untagged
@@ -7153,6 +7154,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1041150963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041150962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9fab7128b7da04a8be398e1fd0caf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GPSStatus: 
+  latitudeValue: 0
+  longitudeValue: 0
+  altitudeValue: 0
+  horizontalAccuracyValue: 0
+  timeStampValue: 0
+  key: 61660ffdadcdcb5184827cbd78634d92
 --- !u!4 &1041150964
 Transform:
   m_ObjectHideFlags: 0

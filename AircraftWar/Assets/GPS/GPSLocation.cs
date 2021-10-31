@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Networking;
 using UnityEngine;
 
 public class GPSLocation : MonoBehaviour
@@ -11,7 +12,7 @@ public class GPSLocation : MonoBehaviour
     public float altitudeValue;
     public float horizontalAccuracyValue;
     public double timeStampValue;
-
+    public string key = "61660ffdadcdcb5184827cbd78634d92";
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class GPSLocation : MonoBehaviour
 
     IEnumerator GPSLoc()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(20);
         if (!Input.location.isEnabledByUser)
         {
             Debug.Log("222");
@@ -52,7 +53,6 @@ public class GPSLocation : MonoBehaviour
         //InvokeRepeating("UpdateGPSData", 0.5f, 1f);
         Invoke("UpdateGPSData", 0.5f);
     }
-
     private void UpdateGPSData()
     {
         if(Input.location.status == LocationServiceStatus.Running)
@@ -65,7 +65,27 @@ public class GPSLocation : MonoBehaviour
             timeStampValue = Input.location.lastData.timestamp;
 
             print(latitudeValue.ToString() + " " + longitudeValue.ToString());
+            StartCoroutine(GetRequest(
+                    "http://restapi.amap.com/v3/geocode/regeo?key=" + key + "&location=" + latitudeValue.ToString() + "," + longitudeValue.ToString()));
         }
     }
-
+    IEnumerator GetRequest(string uri)
+        {
+            using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
+            {
+                // Request and wait for the desired page.
+                yield return webRequest.SendWebRequest();
+                string[] pages = uri.Split('/');
+                int page = pages.Length - 1;
+                if (webRequest.isNetworkError)
+                {
+                    // Debug.Log(pages[page] + ": Error: " + webRequest.error);
+                }
+                else
+                {
+                    Debug.Log(webRequest.downloadHandler.text);
+                    //Debug.LogError("rn" + jd["regeocode"]["formatted_address"].ToString());
+                }
+            }
+        }
 }
