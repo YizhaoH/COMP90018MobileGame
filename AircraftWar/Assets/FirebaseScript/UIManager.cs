@@ -44,6 +44,7 @@ public class UIManager : MonoBehaviour
     public void LoginScreen() //Back button
     {
         ClearScreen();
+        TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, true);
         loginUI.SetActive(true);
     }
     public void RegisterScreen() // Regester button

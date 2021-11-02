@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CloudyScene.unity
     guid: 1e7189bc03e9e8c4f8b868008b887fd0
+  - enabled: 1
+    path: Assets/Scenes/RainyScene.unity
+    guid: 02179663e3b3329479e3985aac04fbf6
   m_configObjects: {}

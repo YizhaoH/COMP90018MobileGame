@@ -7,15 +7,32 @@ public class HealthSystem : MonoBehaviour
     public int health;
     public int maxHealth;
     public event EventHandler OnHealthChanged;
+    public EndGame endGameMenu;
+    public ScoreManager scoreManager;
 
-
+    void Start()
+    {
+        scoreManager = GameObject.FindWithTag("Score").GetComponent<ScoreManager>();
+    }
     public void getDamage(int dmg)
     {
         health -= dmg;
         if (health<0) health = 0;
+        if (health <= 0)
+        {
+            Debug.Log(this.transform.tag);
+            checkGameOver();
+        }
         if (OnHealthChanged != null) OnHealthChanged(this, EventArgs.Empty);
     }
-
+    public void checkGameOver()
+    {
+        if (this.transform.tag == "Player")
+        {
+            Debug.Log("over");
+            endGameMenu.Setup(scoreManager.score);
+        }
+    }
     public float getHealthPercent()
     {
         return (float)health / maxHealth;

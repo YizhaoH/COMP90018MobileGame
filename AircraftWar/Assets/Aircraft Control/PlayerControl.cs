@@ -128,7 +128,8 @@ public class PlayerControl : MonoBehaviour
         if(other.transform.tag == "Terrain")
         {
             Debug.Log("game over");
-            healthSystem.health -= 1000;
+
+            healthSystem.getDamage(200);
         }
     }
 
