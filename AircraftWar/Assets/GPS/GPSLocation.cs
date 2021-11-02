@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using LitJson;
-
+using UnityEngine.Android;
 public class GPSLocation : MonoBehaviour
 {
 
@@ -23,6 +23,15 @@ public class GPSLocation : MonoBehaviour
 
     IEnumerator GPSLoc()
     {
+        #if UNITY_ANRDOID
+        // Android code goes here
+        if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
+        {
+            Permission.RequestUserPermission(Permission.FineLocation);
+            Permission.RequestUserPermission(Permission.CoarseLocation);
+        }
+        #endif
+        
         yield return new WaitForSeconds(2);
         if(!Input.location.isEnabledByUser)
         {
