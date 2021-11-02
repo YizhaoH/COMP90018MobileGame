@@ -1,0 +1,130 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d90f49da3fc3475d8fa39cba04e0789, type: 3}
+  m_Name: LanguageDatabase
+  m_EditorClassIdentifier: 
+  database:
+  - word: settings
+    wordTranslation:
+    - country: 0
+      meaning: "\u0625\u0639\u062F\u0627\u062F\u0627\u062A"
+    - country: 1
+      meaning: "\u8BBE\u7F6E"
+    - country: 6
+      meaning: die einstellungen
+    - country: 7
+      meaning: "\u0938\u0947\u091F\u093F\u0902\u0917\u094D\u0938"
+    - country: 8
+      meaning: pengaturan
+    - country: 13
+      meaning: ajustes
+  - word: language
+    wordTranslation:
+    - country: 0
+      meaning: "\u0644\u063A\u0629"
+    - country: 1
+      meaning: "\u8BED\u8A00"
+    - country: 2
+      meaning: taal
+    - country: 3
+      meaning: language
+    - country: 4
+      meaning: wika
+    - country: 5
+      meaning: la langue
+    - country: 6
+      meaning: sprache
+    - country: 7
+      meaning: "\u092D\u093E\u0937\u093E"
+    - country: 8
+      meaning: bahasa
+    - country: 9
+      meaning: linguaggio
+    - country: 10
+      meaning: "\u8A00\u8A9E"
+    - country: 11
+      meaning: "l\xEDngua"
+    - country: 12
+      meaning: "\u044F\u0437\u044B\u043A"
+    - country: 13
+      meaning: idioma
+    - country: 14
+      meaning: dil
+    - country: 15
+      meaning: "\u0632\u0628\u0627\u0646"
+  - word: automatic
+    wordTranslation:
+    - country: 1
+      meaning: "\u81EA\u52A8"
+    - country: 2
+      meaning: automatisch
+    - country: 4
+      meaning: awtomatikong
+    - country: 8
+      meaning: otomatis
+    - country: 9
+      meaning: automatico
+    - country: 14
+      meaning: otomatik
+  - word: hello
+    wordTranslation:
+    - country: 0
+      meaning: "\u0645\u0631\u062D\u0628\u0627"
+    - country: 1
+      meaning: "\u4F60\u597D"
+    - country: 2
+      meaning: Hallo
+    - country: 3
+      meaning: hello
+    - country: 4
+      meaning: Kamusta
+    - country: 5
+      meaning: Bonjour
+    - country: 6
+      meaning: Hallo
+    - country: 7
+      meaning: "\u0928\u092E\u0938\u094D\u0924\u0947"
+    - country: 8
+      meaning: Halo
+    - country: 9
+      meaning: Ciao
+    - country: 10
+      meaning: "\u3053\u3093\u306B\u3061\u306F"
+    - country: 11
+      meaning: "Ol\xE1"
+    - country: 12
+      meaning: "\u0417\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439\u0442\u0435"
+    - country: 13
+      meaning: Hola
+    - country: 14
+      meaning: Merhaba
+    - country: 15
+      meaning: "\u06C1\u06CC\u0644\u0648"
+  - word: menu
+    wordTranslation:
+    - country: 1
+      meaning: "\u83DC\u5355"
+    - country: 14
+      meaning: "Men\xFC"
+  data:
+  - translatedTo: 8643
+    word: settings
+  - translatedTo: -1
+    word: language
+  - translatedTo: 17174
+    word: automatic
+  - translatedTo: -1
+    word: hello
+  - translatedTo: 16386
+    word: menu
+  successfullDownloaded: 5
+  sourceLanguage: 3

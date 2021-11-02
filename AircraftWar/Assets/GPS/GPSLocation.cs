@@ -90,7 +90,7 @@ public class GPSLocation : MonoBehaviour
             {
                 Debug.Log(webRequest.downloadHandler.text);
                 JsonData jd = JsonMapper.ToObject(webRequest.downloadHandler.text);
-                Debug.Log("rn" + jd["status"].ToString());
+                Debug.Log(jd["status"].ToString());
             }
         }
     }
