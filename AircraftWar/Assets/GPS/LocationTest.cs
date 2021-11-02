@@ -4,31 +4,31 @@ using UnityEngine.Networking;
 using UnityEngine.Android;
 public class LocationTest : MonoBehaviour
     {
-        private string longitude;//¾­¶È
-        private string latitude;//Î³¶È
+        private string longitude;//ç»åº¦
+        private string latitude;//çº¬åº¦
         void Start() => StartCoroutine(StartGPS());
         IEnumerator StartGPS()
         {
-            //Unity¸øÎÒÃÇÌá¹©µÄÒ»¸öÏà¹ØÈ¨ÏŞÀà Permission£¬¿ÉÒÔÅĞ¶Ïµ±Ç°Ïà¹ØÈ¨ÏŞÊÇ·ñ¿ªÆô
+            //Unityç»™æˆ‘ä»¬æä¾›çš„ä¸€ä¸ªç›¸å…³æƒé™ç±» Permissionï¼Œå¯ä»¥åˆ¤æ–­å½“å‰ç›¸å…³æƒé™æ˜¯å¦å¼€å¯
             #if UNITY_ANRDOID
             // Android code goes here
             if (Permission.HasUserAuthorizedPermission(Permission.FineLocation))
             {
-                //Èç¹ûÃ»ÓĞ¿ªÆô¾ÍÌáÊ¾¿ªÆôÈ¨ÏŞ
+                //å¦‚æœæ²¡æœ‰å¼€å¯å°±æç¤ºå¼€å¯æƒé™
                 Permission.RequestUserPermission(Permission.FineLocation);
             }
             #endif
-            Debug.LogError("¿ªÊ¼»ñÈ¡GPSĞÅÏ¢");
-            // ¼ì²éÎ»ÖÃ·şÎñÊÇ·ñ¿ÉÓÃ  
+            Debug.LogError("å¼€å§‹è·å–GPSä¿¡æ¯");
+            // æ£€æŸ¥ä½ç½®æœåŠ¡æ˜¯å¦å¯ç”¨  
             if (!Input.location.isEnabledByUser)
             {
-                Debug.Log("Î»ÖÃ·şÎñ²»¿ÉÓÃ");
+                Debug.Log("ä½ç½®æœåŠ¡ä¸å¯ç”¨");
                 yield break;
             }
-            // ²éÑ¯Î»ÖÃÖ®Ç°ÏÈ¿ªÆôÎ»ÖÃ·şÎñ
-            Debug.Log("Æô¶¯Î»ÖÃ·şÎñ");
+            // æŸ¥è¯¢ä½ç½®ä¹‹å‰å…ˆå¼€å¯ä½ç½®æœåŠ¡
+            Debug.Log("å¯åŠ¨ä½ç½®æœåŠ¡");
             Input.location.Start();
-            // µÈ´ı·şÎñ³õÊ¼»¯  
+            // ç­‰å¾…æœåŠ¡åˆå§‹åŒ–  
             int maxWait = 20;
             while (Input.location.status == LocationServiceStatus.Initializing && maxWait > 0)
             {
@@ -36,36 +36,36 @@ public class LocationTest : MonoBehaviour
                 yield return new WaitForSeconds(1);
                 maxWait--;
             }
-            // ·şÎñ³õÊ¼»¯³¬Ê±  
+            // æœåŠ¡åˆå§‹åŒ–è¶…æ—¶  
             if (maxWait < 1)
             {
-                Debug.Log("·şÎñ³õÊ¼»¯³¬Ê±");
+                Debug.Log("æœåŠ¡åˆå§‹åŒ–è¶…æ—¶");
                 yield break;
             }
-            // Á¬½ÓÊ§°Ü  
+            // è¿æ¥å¤±è´¥  
             if (Input.location.status == LocationServiceStatus.Failed)
             {
-                Debug.Log("ÎŞ·¨È·¶¨Éè±¸Î»ÖÃ");
+                Debug.Log("æ— æ³•ç¡®å®šè®¾å¤‡ä½ç½®");
                 yield break;
             }
             else
             {
                 Debug.Log("Location:  \n" +
-                    "Î³¶È£º" + Input.location.lastData.latitude + " \n" +
-                           "¾­¶È£º" + Input.location.lastData.longitude + " \n" +
-                           "º£°Î£º" + Input.location.lastData.altitude + " \n" +
-                           "Ë®Æ½¾«¶È£º" + Input.location.lastData.horizontalAccuracy + " \n" +
-                           "´¹Ö±¾«¶È£º" + Input.location.lastData.verticalAccuracy + " \n" +
-                           "Ê±¼ä´Á£º" + Input.location.lastData.timestamp);
+                    "çº¬åº¦ï¼š" + Input.location.lastData.latitude + " \n" +
+                           "ç»åº¦ï¼š" + Input.location.lastData.longitude + " \n" +
+                           "æµ·æ‹”ï¼š" + Input.location.lastData.altitude + " \n" +
+                           "æ°´å¹³ç²¾åº¦ï¼š" + Input.location.lastData.horizontalAccuracy + " \n" +
+                           "å‚ç›´ç²¾åº¦ï¼š" + Input.location.lastData.verticalAccuracy + " \n" +
+                           "æ—¶é—´æˆ³ï¼š" + Input.location.lastData.timestamp);
                 longitude = Input.location.lastData.longitude.ToString();
                 latitude = Input.location.lastData.latitude.ToString();
-                //StartCoroutine(GetRequest(
-                //    "http://restapi.amap.com/v3/geocode/regeo?key=" + key + "&location=" + longitude + "," + latitude));
+                StartCoroutine(GetRequest(
+                    "http://restapi.amap.com/v3/geocode/regeo?key=" + key + "&location=" + longitude + "," + latitude));
             }
-            // Í£Ö¹·şÎñ£¬Èç¹ûÃ»±ØÒª¼ÌĞø¸üĞÂÎ»ÖÃ£¬£¨ÎªÁËÊ¡µç
+            // åœæ­¢æœåŠ¡ï¼Œå¦‚æœæ²¡å¿…è¦ç»§ç»­æ›´æ–°ä½ç½®ï¼Œï¼ˆä¸ºäº†çœç”µ
             Input.location.Stop();
         }
-        string key = "";       //È¥¸ßµÂµØÍ¼¿ª·¢ÕßÉêÇë
+        string key = "";       //å»é«˜å¾·åœ°å›¾å¼€å‘è€…ç”³è¯·
         IEnumerator GetRequest(string uri)
         {
             using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))

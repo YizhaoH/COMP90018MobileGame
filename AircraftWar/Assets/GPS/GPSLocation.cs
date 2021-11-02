@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.Networking;
 using UnityEngine;
+using UnityEngine.Networking;
+using LitJson;
 
 public class GPSLocation : MonoBehaviour
 {
-    //Get a Google API Key from https://developers.google.com/maps/documentation/geocoding/get-api-key
+
     public string GPSStatus;
     public float latitudeValue;
     public float longitudeValue;
@@ -13,6 +14,7 @@ public class GPSLocation : MonoBehaviour
     public float horizontalAccuracyValue;
     public double timeStampValue;
     public string key = "61660ffdadcdcb5184827cbd78634d92";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +23,13 @@ public class GPSLocation : MonoBehaviour
 
     IEnumerator GPSLoc()
     {
-        yield return new WaitForSeconds(20);
-        if (!Input.location.isEnabledByUser)
+        yield return new WaitForSeconds(2);
+        if(!Input.location.isEnabledByUser)
         {
             Debug.Log("222");
             yield break;
-        }
+        }    
+
         //start service before querying location
         Input.location.Start();
 
@@ -53,6 +56,7 @@ public class GPSLocation : MonoBehaviour
         //InvokeRepeating("UpdateGPSData", 0.5f, 1f);
         Invoke("UpdateGPSData", 0.5f);
     }
+
     private void UpdateGPSData()
     {
         if(Input.location.status == LocationServiceStatus.Running)
@@ -63,29 +67,31 @@ public class GPSLocation : MonoBehaviour
             altitudeValue = Input.location.lastData.altitude;
             horizontalAccuracyValue = Input.location.lastData.horizontalAccuracy;
             timeStampValue = Input.location.lastData.timestamp;
-
-            print(latitudeValue.ToString() + " " + longitudeValue.ToString());
+            print(latitudeValue.ToString()+" "+ longitudeValue.ToString());
             StartCoroutine(GetRequest(
-                    "http://restapi.amap.com/v3/geocode/regeo?key=" + key + "&location=" + latitudeValue.ToString() + "," + longitudeValue.ToString()));
+                    "http://restapi.amap.com/v3/geocode/regeo?key=" + key + "&location=" + longitudeValue.ToString() + "," + latitudeValue.ToString()));
         }
+        Input.location.Stop();
     }
-    IEnumerator GetRequest(string uri)
+
+        IEnumerator GetRequest(string uri)
+    {
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
-            using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
+            // Request and wait for the desired page.
+            yield return webRequest.SendWebRequest();
+            string[] pages = uri.Split('/');
+            int page = pages.Length - 1;
+            if (webRequest.isNetworkError)
             {
-                // Request and wait for the desired page.
-                yield return webRequest.SendWebRequest();
-                string[] pages = uri.Split('/');
-                int page = pages.Length - 1;
-                if (webRequest.isNetworkError)
-                {
-                    // Debug.Log(pages[page] + ": Error: " + webRequest.error);
-                }
-                else
-                {
-                    Debug.Log(webRequest.downloadHandler.text);
-                    //Debug.LogError("rn" + jd["regeocode"]["formatted_address"].ToString());
-                }
+                Debug.Log(pages[page] + ": Error: " + webRequest.error);
+            }
+            else
+            {
+                Debug.Log(webRequest.downloadHandler.text);
+                JsonData jd = JsonMapper.ToObject(webRequest.downloadHandler.text);
+                Debug.Log("rn" + jd["status"].ToString());
             }
         }
+    }
 }
