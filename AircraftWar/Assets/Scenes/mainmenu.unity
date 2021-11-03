@@ -2528,7 +2528,7 @@ GameObject:
   - component: {fileID: 331137474}
   - component: {fileID: 331137473}
   m_Layer: 5
-  m_Name: Killed Title
+  m_Name: HighestScore Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2551,8 +2551,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -300, y: -171}
-  m_SizeDelta: {x: 222.9177, y: 50}
+  m_AnchoredPosition: {x: -263.51, y: -174.662}
+  m_SizeDelta: {x: 295.89, y: 42.676}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &331137473
 MonoBehaviour:
@@ -2574,7 +2574,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Killed :'
+  m_text: 'Highest Score :'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3026,7 +3026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &377743189
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3396,7 +3396,7 @@ GameObject:
   - component: {fileID: 440402126}
   - component: {fileID: 440402125}
   m_Layer: 5
-  m_Name: Killed
+  m_Name: HighestScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3485,7 +3485,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -9.924011, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3515,8 +3515,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 617, y: 0}
-  m_SizeDelta: {x: 368.0637, y: 50}
+  m_AnchoredPosition: {x: 489.7445, y: -1.831}
+  m_SizeDelta: {x: 622.5743, y: 46.338}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &462118440
 GameObject:
@@ -6904,7 +6904,7 @@ GameObject:
   - component: {fileID: 944971691}
   - component: {fileID: 944971690}
   m_Layer: 5
-  m_Name: Battle Title
+  m_Name: EmailTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6950,7 +6950,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Battle :'
+  m_text: 'Email:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7253,7 +7253,7 @@ GameObject:
   - component: {fileID: 1045482240}
   - component: {fileID: 1045482239}
   m_Layer: 5
-  m_Name: Battle
+  m_Name: Email
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7372,8 +7372,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 616, y: 0}
-  m_SizeDelta: {x: 368.0637, y: 50}
+  m_AnchoredPosition: {x: 503.33447, y: 0}
+  m_SizeDelta: {x: 593.3945, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1052514228
 GameObject:
@@ -7814,8 +7814,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 616, y: 0}
-  m_SizeDelta: {x: 368.0637, y: 50}
+  m_AnchoredPosition: {x: 503.39258, y: 0}
+  m_SizeDelta: {x: 593.2783, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1219723709
 MonoBehaviour:
@@ -7837,7 +7837,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: sdfsdfsdfsdfsdfsdfs
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8060,7 +8060,7 @@ GameObject:
   - component: {fileID: 1255682949}
   - component: {fileID: 1255682948}
   m_Layer: 5
-  m_Name: HighestScore
+  m_Name: City
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8082,8 +8082,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 503, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 389.50623, y: 0}
+  m_SizeDelta: {x: 426.9874, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1255682948
 MonoBehaviour:
@@ -8583,7 +8583,7 @@ GameObject:
   - component: {fileID: 1360557989}
   - component: {fileID: 1360557988}
   m_Layer: 5
-  m_Name: HighestScore Title
+  m_Name: PlayerCityTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8629,7 +8629,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Highest Score :'
+  m_text: 'City :'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
