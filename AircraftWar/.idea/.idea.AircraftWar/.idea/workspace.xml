@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54694183-013d-44fa-8f4e-22c1f6461aa5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/GPS/GPS.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GPS/GPS.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Boids/Resources/Projectile01/AIM-54 phoenix texture.jpeg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Boids/Resources/Projectile01/AIM-54 phoenix texture.jpeg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GPS/GPSLocation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GPS/GPSLocation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GPS/GeolocationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GPS/GeolocationManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/mainmenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/mainmenu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/google-services-desktop.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/StreamingAssets/google-services-desktop.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GvhProjectSettings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +61,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635849205768</updated>
-      <workItem from="1635849320785" duration="12453000" />
+      <workItem from="1635849320785" duration="13084000" />
     </task>
     <servers />
   </component>
