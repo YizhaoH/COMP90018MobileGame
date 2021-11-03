@@ -44,7 +44,6 @@ public class UIManager : MonoBehaviour
     public void LoginScreen() //Back button
     {
         ClearScreen();
-        TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default, false, false, true);
         loginUI.SetActive(true);
     }
     public void RegisterScreen() // Regester button
@@ -65,7 +64,7 @@ public class UIManager : MonoBehaviour
     }
     public void GameStart()
     {
-        SceneManager.LoadScene(_newGameLevel);
+        SceneManager.LoadSceneAsync(_newGameLevel);
         
     }
 }

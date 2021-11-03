@@ -47,9 +47,9 @@ public class InputManager : MonoBehaviour
         if (OnInputHorizontalOrVertical != null)
         {
             //OnInputHorizontalOrVertical(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));   //使用键盘输入         
-            //OnInputHorizontalOrVertical(joystick.Horizontal, joystick.Vertical); // 使用摇杆输入
-            OnInputHorizontalOrVertical(Input.acceleration.x*1.3f, -Input.acceleration.z*1.3f - 0.75f);
-            Debug.Log(Input.acceleration.z);
+            OnInputHorizontalOrVertical(joystick.Horizontal, joystick.Vertical); // 使用摇杆输入
+            //OnInputHorizontalOrVertical(Input.acceleration.x*1.3f, -Input.acceleration.z*1.3f - 0.75f);
+            //Debug.Log(Input.acceleration.z);
             //OnInputHorizontalOrVertical = null;
         }
         //if (Input.touchCount > 0) {

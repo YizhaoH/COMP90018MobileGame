@@ -2300,7 +2300,7 @@ GameObject:
   - component: {fileID: 244254715}
   m_Layer: 0
   m_Name: FirebaseManager
-  m_TagString: Untagged
+  m_TagString: Firebase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2342,10 +2342,11 @@ MonoBehaviour:
   passwordRegisterVerifyField: {fileID: 1824378063}
   warningRegisterText: {fileID: 1014656241}
   usernameText: {fileID: 1219723709}
-  battleText: {fileID: 1045482239}
-  hightscoreText: {fileID: 1255682948}
-  killedText: {fileID: 440402125}
+  Email: {fileID: 1045482239}
+  City: {fileID: 1255682948}
+  HightscoreText: {fileID: 440402125}
   usernameField: {fileID: 1569037371}
+  scoreManager: {fileID: 0}
 --- !u!1 &265182928
 GameObject:
   m_ObjectHideFlags: 0
@@ -3026,7 +3027,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &377743189
 RectTransform:
   m_ObjectHideFlags: 0

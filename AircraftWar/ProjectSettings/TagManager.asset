@@ -11,6 +11,7 @@ TagManager:
   - Boundary
   - Enemy
   - Score
+  - Firebase
   layers:
   - Default
   - TransparentFX

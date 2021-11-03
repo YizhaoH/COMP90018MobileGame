@@ -12,8 +12,8 @@ public class FirebaseManager : MonoBehaviour
     [Header("Firebase")]
     public DependencyStatus dependencyStatus;
     public FirebaseAuth auth;
-    public FirebaseUser User;
-    public DatabaseReference DBreference;
+    public static FirebaseUser User;
+    public static DatabaseReference DBreference;
 
     //Login variables
     [Header("Login")]
@@ -37,9 +37,10 @@ public class FirebaseManager : MonoBehaviour
     public TMP_Text City;
     public TMP_Text HightscoreText;
     public TMP_InputField usernameField;
-
     UnityEngine.TouchScreenKeyboard keyboard;
     public static string keyboardText = "";
+    
+    public ScoreManager scoreManager;
     private void Awake()
     {
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
@@ -61,6 +62,7 @@ public class FirebaseManager : MonoBehaviour
         Debug.Log("Setting up Firebase Auth");
         auth = FirebaseAuth.DefaultInstance;
         DBreference = FirebaseDatabase.DefaultInstance.RootReference;
+        scoreManager = GameObject.FindWithTag("Score").GetComponent<ScoreManager>();
     }
 
     public void ClearLoginFeilds()
@@ -254,6 +256,53 @@ public class FirebaseManager : MonoBehaviour
     {
         StartCoroutine(UpdateUsernameAuth(usernameField.text));
         StartCoroutine(UpdateUsernameDatabase(usernameField.text));
+    }
+    public void updateScore()
+    {
+        Debug.Log("update"+" "+User.DisplayName);
+        StartCoroutine(UpdateUsernameDatabase(scoreManager.score.ToString()));
+    }
+        private IEnumerator UpdateScoreDatabase(string _score)
+    {
+        //Set the currently logged in user score in the database
+        var DBTask = DBreference.Child("users").Child(User.UserId).Child("score").SetValueAsync(_score);
+        Debug.Log("update");
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+
+        if (DBTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+        else
+        {
+            //Database score is now updated
+        }
+    }
+
+    private IEnumerator LoadUserData()
+    {
+        //Get the currently logged in user data
+        var DBTask = DBreference.Child("users").Child(User.UserId).GetValueAsync();
+
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+
+        if (DBTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+        else if (DBTask.Result.Value == null)
+        {
+            //No data exists yet
+            HightscoreText.text = "0";
+
+        }
+        else
+        {
+            //Data has been retrieved
+            DataSnapshot snapshot = DBTask.Result;
+
+            HightscoreText.text = snapshot.Child("score").Value.ToString();
+        }
     }
 
 }
