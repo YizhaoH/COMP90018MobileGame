@@ -33,9 +33,9 @@ public class FirebaseManager : MonoBehaviour
     //Personal page variables
     [Header("PersonalPage")]
     public TMP_Text usernameText;
-    public TMP_Text battleText;
-    public TMP_Text hightscoreText;
-    public TMP_Text killedText;
+    public TMP_Text Email;
+    public TMP_Text City;
+    public TMP_Text HightscoreText;
     public TMP_InputField usernameField;
 
     UnityEngine.TouchScreenKeyboard keyboard;
