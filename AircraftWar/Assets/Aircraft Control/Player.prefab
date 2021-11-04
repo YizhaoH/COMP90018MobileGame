@@ -176,7 +176,7 @@ MonoBehaviour:
   thrustSmoothing: 2
   model: {fileID: 3861053520749743097}
   mat: {fileID: 2100000, guid: db90d5a1991314743895130139e3c41b, type: 2}
-  healthSystem: {fileID: 0}
+  healthSystem: {fileID: 3992052640239071540}
 --- !u!135 &87020064
 SphereCollider:
   m_ObjectHideFlags: 0

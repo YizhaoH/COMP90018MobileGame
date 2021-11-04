@@ -102,8 +102,8 @@ public class FirebaseManager : MonoBehaviour
     {
         auth.SignOut();
         UIManager.instance.LoginScreen();
-        ClearRegisterFeilds();
-        ClearLoginFeilds();
+       // ClearRegisterFeilds();
+       // ClearLoginFeilds();
     }
 
     private IEnumerator Login(string _email, string _password)

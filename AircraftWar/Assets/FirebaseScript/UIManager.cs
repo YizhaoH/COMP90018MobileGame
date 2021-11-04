@@ -18,7 +18,8 @@ public class UIManager : MonoBehaviour
     public GameObject startpage;
 
     [Header("Levels To Load")]
-    public string _newGameLevel;
+    public string _newGameLevel1;
+    public string _newGameLevel2;
 
     private void Awake()
     {
@@ -67,7 +68,15 @@ public class UIManager : MonoBehaviour
     public void GameStart()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadSceneAsync(_newGameLevel);
+        if (Random.Range(1,100)<= 50)
+        {
+            SceneManager.LoadSceneAsync(_newGameLevel1);
+        }
+        else
+        {
+            SceneManager.LoadSceneAsync(_newGameLevel2);
+        }
+        
     }
 
     public void Quitgame()

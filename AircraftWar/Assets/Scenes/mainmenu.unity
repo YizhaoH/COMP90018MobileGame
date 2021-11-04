@@ -709,7 +709,7 @@ GameObject:
   - component: {fileID: 140197607}
   - component: {fileID: 140197606}
   m_Layer: 5
-  m_Name: Register
+  m_Name: ToRegisterPage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2572,7 +2572,7 @@ GameObject:
   - component: {fileID: 313811604}
   - component: {fileID: 313811603}
   m_Layer: 5
-  m_Name: Text
+  m_Name: EmailText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9687,7 +9687,8 @@ MonoBehaviour:
   gameStart: {fileID: 1969731086}
   mainmenu: {fileID: 593455458}
   startpage: {fileID: 1593938327}
-  _newGameLevel: CloudyScene
+  _newGameLevel1: CloudyScene
+  _newGameLevel2: RainyScene
 --- !u!4 &1495735885
 Transform:
   m_ObjectHideFlags: 0
@@ -10412,7 +10413,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainmenuContainer: {fileID: 0}
-  AccountPageContainor: {fileID: 0}
+  accountPageContainor: {fileID: 0}
+  startPageContainor: {fileID: 0}
 --- !u!1 &1632013344
 GameObject:
   m_ObjectHideFlags: 0
@@ -14092,15 +14094,15 @@ RectTransform:
   m_GameObject: {fileID: 2053509847}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 593455461}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 861, y: -1004}
-  m_SizeDelta: {x: 70.565, y: 70.565}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -123, y: 118}
+  m_SizeDelta: {x: 70.56494, y: 70.565}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2053509849
 MonoBehaviour:
