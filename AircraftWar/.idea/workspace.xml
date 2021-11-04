@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c5435199-670f-41e2-8110-959711885c00" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/FirebaseScript/AuthCheck.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/FirebaseScript/AuthCheck.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InGameUIScript/ControlManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/InGameUIScript/ControlManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Aircraft Control/InGameCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Aircraft Control/InGameCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Aircraft Control/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Aircraft Control/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Aircraft Control/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Aircraft Control/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Aircraft Control/PlayerControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Aircraft Control/PlayerControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FirebaseScript/FirebaseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FirebaseScript/FirebaseManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/FirebaseScript/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/FirebaseScript/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GPS/GPSLocation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GPS/GPSLocation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Health System/HealthHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Health System/HealthHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Health System/HealthSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Health System/HealthSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InGameUIScript/EndGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InGameUIScript/EndGame.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InGameUIScript/Pause.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InGameUIScript/Pause.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New Terrain 3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New Terrain 3.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New Terrain 4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New Terrain 4.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CloudyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CloudyScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/RainyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/RainyScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/mainmenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/mainmenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="20SYbBggeDmX60Vxg89j3UPUQgU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c5435199-670f-41e2-8110-959711885c00" name="Changes" comment="" />
+      <created>1636039534930</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1636039534930</updated>
+    </task>
+    <servers />
+  </component>
+</project>
