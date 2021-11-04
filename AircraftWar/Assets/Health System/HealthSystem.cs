@@ -9,9 +9,9 @@ public class HealthSystem : MonoBehaviour
     public event EventHandler OnHealthChanged;
     public EndGame endGameMenu;
     public ScoreManager scoreManager;
-
     void Start()
     {
+        
         scoreManager = GameObject.FindWithTag("Score").GetComponent<ScoreManager>();
     }
     public void getDamage(int dmg)
@@ -27,7 +27,7 @@ public class HealthSystem : MonoBehaviour
     }
     public void checkGameOver()
     {
-        if (this.transform.tag == "Player")
+        if (this.transform.parent.tag == "Player")
         {
             Debug.Log("over");
             endGameMenu.Setup(scoreManager.score);

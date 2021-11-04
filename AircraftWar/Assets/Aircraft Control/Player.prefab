@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2060272046
+--- !u!1 &4333209376283863712
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2060272047}
-  - component: {fileID: 2060272048}
-  - component: {fileID: 6765162993763881537}
+  - component: {fileID: 4250390026808370751}
+  - component: {fileID: 1295561946641917324}
+  - component: {fileID: 3992052640239071540}
   m_Layer: 0
   m_Name: Health Handler
   m_TagString: Untagged
@@ -18,13 +18,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2060272047
+--- !u!4 &4250390026808370751
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2060272046}
+  m_GameObject: {fileID: 4333209376283863712}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,13 +32,13 @@ Transform:
   m_Father: {fileID: 8137867597998335772}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2060272048
+--- !u!114 &1295561946641917324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2060272046}
+  m_GameObject: {fileID: 4333209376283863712}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: baa5721d998fab7498acb4d2fb15ceff, type: 3}
@@ -46,22 +46,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pfhealthBar: {fileID: 4090514546342678, guid: 2d401b057fd353f41bd69bc632d694c5, type: 3}
   startHealth: 100
-  healthSystem: {fileID: 6765162993763881537}
+  healthSystem: {fileID: 3992052640239071540}
   cam: {fileID: 0}
---- !u!114 &6765162993763881537
+  agent: {fileID: 0}
+--- !u!114 &3992052640239071540
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2060272046}
+  m_GameObject: {fileID: 4333209376283863712}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 677173afd326d8948a380dcc68ba219d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  maxHealth: 100
+  maxHealth: 0
+  endGameMenu: {fileID: 0}
+  scoreManager: {fileID: 0}
 --- !u!1 &8137867597398545243
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +108,6 @@ GameObject:
   - component: {fileID: 8137867597998335773}
   - component: {fileID: 87020064}
   - component: {fileID: 5451935209908541243}
-  - component: {fileID: 715265753}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -131,7 +133,7 @@ Transform:
   - {fileID: 4580264266254791490}
   - {fileID: 8608793048645972399}
   - {fileID: 4942477384603687195}
-  - {fileID: 2060272047}
+  - {fileID: 4250390026808370751}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -166,12 +168,15 @@ MonoBehaviour:
   moveSpeed: 60
   horizontalSpeed: 35
   verticalSpeed: 20
+  MinX_rotation: -40
+  MaxX_rotation: 10
   leanAmount_X: 90
   leanAmount_Y: 30
   steeringSmoothing: 1.5
   thrustSmoothing: 2
   model: {fileID: 3861053520749743097}
   mat: {fileID: 2100000, guid: db90d5a1991314743895130139e3c41b, type: 2}
+  healthSystem: {fileID: 0}
 --- !u!135 &87020064
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -200,20 +205,6 @@ MonoBehaviour:
   theBullet: {fileID: 2131483157972977335, guid: 2a893eec5598ae141833b3774eafaaa8, type: 3}
   theMuzzle1: {fileID: 4580264266254791490}
   theMuzzle2: {fileID: 8608793048645972399}
---- !u!114 &715265753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8137867597998335775}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 677173afd326d8948a380dcc68ba219d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 0
 --- !u!1001 &185733911
 PrefabInstance:
   m_ObjectHideFlags: 0

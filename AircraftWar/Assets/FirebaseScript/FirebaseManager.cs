@@ -11,7 +11,7 @@ public class FirebaseManager : MonoBehaviour
     //Firebase variables
     [Header("Firebase")]
     public DependencyStatus dependencyStatus;
-    public FirebaseAuth auth;
+    public static FirebaseAuth auth;
     public static FirebaseUser User;
     public static DatabaseReference DBreference;
 
@@ -39,10 +39,19 @@ public class FirebaseManager : MonoBehaviour
     public TMP_InputField usernameField;
     UnityEngine.TouchScreenKeyboard keyboard;
     public static string keyboardText = "";
-    
     public ScoreManager scoreManager;
+    public static FirebaseManager Instance;
+
     private void Awake()
     {
+        if(Instance != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        Instance = this;
+        GameObject.DontDestroyOnLoad(this.gameObject);
+
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
         {
             dependencyStatus = task.Result;
@@ -148,7 +157,6 @@ public class FirebaseManager : MonoBehaviour
             ClearRegisterFeilds();
         }
     }
-
     private IEnumerator Register(string _email, string _password, string _username)
     {
         if (_username == "")
