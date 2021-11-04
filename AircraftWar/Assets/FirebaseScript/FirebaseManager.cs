@@ -33,7 +33,7 @@ public class FirebaseManager : MonoBehaviour
     //Personal page variables
     [Header("PersonalPage")]
     public TMP_Text usernameText;
-    public TMP_Text Email;
+    public TMP_Text EmailText;
     public TMP_Text City;
     public TMP_Text HightscoreText;
     public TMP_InputField usernameField;
@@ -136,10 +136,12 @@ public class FirebaseManager : MonoBehaviour
             Debug.LogFormat("User signed in successfully: {0} ({1})", User.DisplayName, User.Email);
             warningLoginText.text = "";
             confirmLoginText.text = "Logged In";
+            StartCoroutine(LoadUserData());
 
             yield return new WaitForSeconds(2);
 
             usernameText.text = User.DisplayName;
+            EmailText.text = User.Email;
             UIManager.instance.MainMenu();
             confirmLoginText.text = "";
             ClearLoginFeilds();
@@ -256,27 +258,6 @@ public class FirebaseManager : MonoBehaviour
     {
         StartCoroutine(UpdateUsernameAuth(usernameField.text));
         StartCoroutine(UpdateUsernameDatabase(usernameField.text));
-    }
-    public void updateScore()
-    {
-        Debug.Log("update"+" "+User.DisplayName);
-        StartCoroutine(UpdateUsernameDatabase(scoreManager.score.ToString()));
-    }
-        private IEnumerator UpdateScoreDatabase(string _score)
-    {
-        //Set the currently logged in user score in the database
-        var DBTask = DBreference.Child("users").Child(User.UserId).Child("score").SetValueAsync(_score);
-        Debug.Log("update");
-        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
-
-        if (DBTask.Exception != null)
-        {
-            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
-        }
-        else
-        {
-            //Database score is now updated
-        }
     }
 
     private IEnumerator LoadUserData()
