@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
 {
     public TMP_Text Scores;
     public TMP_Text FinalScores;
-
+    public string HightestScore;
     public int score;
     void Start()
     {
@@ -27,9 +27,28 @@ public class ScoreManager : MonoBehaviour
     private IEnumerator UpdateScoreDatabase(string _score)
     {
         //Set the currently logged in user username in the database
-        var DBTask = FirebaseManager.DBreference.Child("users").Child(FirebaseManager.User.UserId).Child("score").SetValueAsync(_score);
+        var DBTaskHScore = FirebaseManager.DBreference.Child("users").Child(FirebaseManager.User.UserId).GetValueAsync();
+        yield return new WaitUntil(predicate: () => DBTaskHScore.IsCompleted);
 
-        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+        if (DBTaskHScore.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {DBTaskHScore.Exception}");
+        }
+        else if (DBTaskHScore.Result.Value == null)
+        {
+            //No data exists yet
+            HightestScore = "0";
+        }
+        else
+        {
+            //Data has been retrieved
+            DataSnapshot snapshot = DBTaskHScore.Result;
+            HightestScore = snapshot.Child("score").Value.ToString();
+        }
+        if (int.Parse(HightestScore) <= int.Parse(_score))
+        {
+            var DBTask = FirebaseManager.DBreference.Child("users").Child(FirebaseManager.User.UserId).Child("score").SetValueAsync(_score);
+            yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
 
         if (DBTask.Exception != null)
         {
@@ -39,6 +58,8 @@ public class ScoreManager : MonoBehaviour
         {
             //Database username is now updated
         }
+        }
+
     }
 
 }
