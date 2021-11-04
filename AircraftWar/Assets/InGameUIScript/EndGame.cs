@@ -25,6 +25,9 @@ public class EndGame : MonoBehaviour
 
     public void quit()
     {
+        //FirebaseManager.auth.SignOut();
         SceneManager.LoadScene(_menu);
+        
+        Debug.Log(FirebaseManager.User.DisplayName);
     }
 }

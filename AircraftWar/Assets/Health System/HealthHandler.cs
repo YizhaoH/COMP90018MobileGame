@@ -12,7 +12,7 @@ public class HealthHandler : MonoBehaviour
     public FlockAgent agent;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         cam = GameObject.FindWithTag("MainCamera").transform;
         //healthSystem = new HealthSystem();
@@ -21,6 +21,8 @@ public class HealthHandler : MonoBehaviour
         Transform healthBarTransform;
         if (this.transform.parent.gameObject.CompareTag("Player"))
         {
+            
+            Debug.Log("player"+healthSystem.health.ToString());
             healthBarTransform = Instantiate(pfhealthBar, new Vector3(0, -7 ,0) + this.transform.position, this.transform.parent.rotation).transform;
             healthBarTransform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }

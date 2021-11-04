@@ -1754,6 +1754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 8415783864267195993}
+  controlManager: {fileID: 0}
 --- !u!1 &1450222807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1924,8 +1925,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -127.64, y: 172}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchoredPosition: {x: -138, y: 151}
+  m_SizeDelta: {x: 137.0033, y: 137.0033}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &1629398548
 CanvasRenderer:

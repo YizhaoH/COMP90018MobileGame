@@ -103,6 +103,7 @@ public class GPSLocation : MonoBehaviour
                 JsonData jd = JsonMapper.ToObject(webRequest.downloadHandler.text);
                 string gpsloc = jd["regeocode"]["addressComponent"]["city"].ToString()+", "+jd["regeocode"]["addressComponent"]["country"];
                 Debug.Log(gpsloc);
+                
                 GPSCity.text = gpsloc;
             }
         }

@@ -32,6 +32,7 @@ public class Pause : MonoBehaviour
 
     public void QuitGame()
     {
+        //FirebaseManager.auth.SignOut();
         SceneManager.LoadScene(_menu);
     }
 }

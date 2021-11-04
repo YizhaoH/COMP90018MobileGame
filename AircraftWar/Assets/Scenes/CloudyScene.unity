@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 958319002}
+  m_SkyboxMaterial: {fileID: 1056319692}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -5410,7 +5410,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &270600827
 MonoBehaviour:
@@ -5426,6 +5426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Scores: {fileID: 2049630632}
   FinalScores: {fileID: 1908704736}
+  HightestScore: 
   score: 0
 --- !u!1 &293905445
 GameObject:
@@ -11080,7 +11081,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &701796888
 GameObject:
@@ -17876,11 +17877,11 @@ MonoBehaviour:
   LST: 641.30035
   lastHourUpdate: 12
   hourTime: 0
-  cloudAnim: {x: 0, y: -0.29206452, z: -0.09848485}
-  cloudFlatBaseAnim: {x: 0, y: -0.029108023}
-  cloudFlatDetailAnim: {x: 0, y: -0.72769886}
-  cloudAnimNonScaled: {x: 0, y: -0.029206432}
-  cirrusAnim: {x: 0, y: -0.014652421}
+  cloudAnim: {x: 0, y: -0.37008813, z: -0.122867346}
+  cloudFlatBaseAnim: {x: 0, y: -0.03691047}
+  cloudFlatDetailAnim: {x: 0, y: -0.9227588}
+  cloudAnimNonScaled: {x: 0, y: -0.03700888}
+  cirrusAnim: {x: 0, y: -0.018553646}
   windIntensity: 0.16000001
   shadowIntensityMod: 0
   interiorMode: 0
@@ -17945,8 +17946,8 @@ MonoBehaviour:
     VFXHolder: {fileID: 1934103455}
     wetness: 0
     curWetness: 0
-    snowStrength: 0.5020159
-    curSnowStrength: 0.5020159
+    snowStrength: 0.5062482
+    curSnowStrength: 0.5062482
     thundersfx: 0
     currentAudioSource: {fileID: 1406507020}
     weatherFullyChanged: 0
@@ -17997,7 +17998,7 @@ MonoBehaviour:
   usePostEffectFog: 0
   showFogInEditor: 1
   EnviroSkyRender: {fileID: 2098371662}
-  skyMat: {fileID: 958319002}
+  skyMat: {fileID: 1056319692}
   showSettings: 1
 --- !u!4 &845441512
 Transform:
@@ -22997,47 +22998,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!21 &958319002
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Enviro/Lite/SkyboxSimple
-  m_Shader: {fileID: 4800000, guid: 846f1e8b410d51444866f03712815c1e, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _FlatCloudsBaseTexture:
-        m_Texture: {fileID: 2800000, guid: 9b9ac0c14a0678d498b26fb2486005f1, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _FlatCloudsDetailTexture:
-        m_Texture: {fileID: 2800000, guid: 3904de3fb7c0ff1419fd3064f8114c90, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MoonTex:
-        m_Texture: {fileID: 2800000, guid: 66ad4c55c5a3a7045a25295e064fc7d2, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Stars:
-        m_Texture: {fileID: 8900000, guid: 214e1a8de772f334886a8d3bee074dc9, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _HorizonColor: {r: 0.9511452, g: 0.9511452, b: 0.9511452, a: 1}
-    - _SkyColor: {r: 0.38252658, g: 0.55919576, b: 0.72395134, a: 0.87389904}
-    - _SunColor: {r: 0.9666419, g: 0.8672625, b: 0.7670391, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &986544969
 GameObject:
   m_ObjectHideFlags: 0
@@ -28059,6 +28019,47 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!21 &1056319692
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Enviro/Lite/SkyboxSimple
+  m_Shader: {fileID: 4800000, guid: 846f1e8b410d51444866f03712815c1e, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _FlatCloudsBaseTexture:
+        m_Texture: {fileID: 2800000, guid: 9b9ac0c14a0678d498b26fb2486005f1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlatCloudsDetailTexture:
+        m_Texture: {fileID: 2800000, guid: 3904de3fb7c0ff1419fd3064f8114c90, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MoonTex:
+        m_Texture: {fileID: 2800000, guid: 66ad4c55c5a3a7045a25295e064fc7d2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Stars:
+        m_Texture: {fileID: 8900000, guid: 214e1a8de772f334886a8d3bee074dc9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _HorizonColor: {r: 0.9511452, g: 0.9511452, b: 0.9511452, a: 1}
+    - _SkyColor: {r: 0.38252658, g: 0.55919576, b: 0.72395134, a: 0.87389904}
+    - _SunColor: {r: 0.9666419, g: 0.8672625, b: 0.7670391, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1080239123 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1080239123, guid: 48517fb73472e2a4f9ce94d1da29ab3b, type: 3}
@@ -34132,11 +34133,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 715265753, guid: 2a08f28afc13545489364fc04dd2320b, type: 3}
+    - target: {fileID: 3992052640239071540, guid: 2a08f28afc13545489364fc04dd2320b, type: 3}
       propertyPath: endGameMenu
       value: 
       objectReference: {fileID: 621059605}
-    - target: {fileID: 715265753, guid: 2a08f28afc13545489364fc04dd2320b, type: 3}
+    - target: {fileID: 3992052640239071540, guid: 2a08f28afc13545489364fc04dd2320b, type: 3}
       propertyPath: scoreManager
       value: 
       objectReference: {fileID: 270600827}
@@ -34187,10 +34188,6 @@ PrefabInstance:
     - target: {fileID: 8137867597998335775, guid: 2a08f28afc13545489364fc04dd2320b, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8137867597998335775, guid: 2a08f28afc13545489364fc04dd2320b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a08f28afc13545489364fc04dd2320b, type: 3}
@@ -35173,22 +35170,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 621059605}
-    - target: {fileID: 1629398545, guid: 48517fb73472e2a4f9ce94d1da29ab3b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 137.0033
-      objectReference: {fileID: 0}
-    - target: {fileID: 1629398545, guid: 48517fb73472e2a4f9ce94d1da29ab3b, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 137.0033
-      objectReference: {fileID: 0}
-    - target: {fileID: 1629398545, guid: 48517fb73472e2a4f9ce94d1da29ab3b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -138
-      objectReference: {fileID: 0}
-    - target: {fileID: 1629398545, guid: 48517fb73472e2a4f9ce94d1da29ab3b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 151
-      objectReference: {fileID: 0}
     - target: {fileID: 1629398546, guid: 48517fb73472e2a4f9ce94d1da29ab3b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -35201,18 +35182,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 87020061}
-    - target: {fileID: 1640048289, guid: 48517fb73472e2a4f9ce94d1da29ab3b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1640048291, guid: 48517fb73472e2a4f9ce94d1da29ab3b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 293905446}
-    - target: {fileID: 1640048292, guid: 48517fb73472e2a4f9ce94d1da29ab3b, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1136427669072208650, guid: 48517fb73472e2a4f9ce94d1da29ab3b, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -35257,37 +35230,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4690140704164205415, guid: 48517fb73472e2a4f9ce94d1da29ab3b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6537312176104635004, guid: 48517fb73472e2a4f9ce94d1da29ab3b, type: 3}
       propertyPath: m_Name
       value: InGameCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 8415783863962892320, guid: 48517fb73472e2a4f9ce94d1da29ab3b, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8415783863962892320, guid: 48517fb73472e2a4f9ce94d1da29ab3b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8415783863962892320, guid: 48517fb73472e2a4f9ce94d1da29ab3b, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8415783863962892320, guid: 48517fb73472e2a4f9ce94d1da29ab3b, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8415783863962892320, guid: 48517fb73472e2a4f9ce94d1da29ab3b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8415783863962892320, guid: 48517fb73472e2a4f9ce94d1da29ab3b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48517fb73472e2a4f9ce94d1da29ab3b, type: 3}
