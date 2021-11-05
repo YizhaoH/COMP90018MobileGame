@@ -37,6 +37,9 @@ public class FirebaseManager : MonoBehaviour
     public TMP_Text City;
     public TMP_Text HightscoreText;
     public TMP_InputField usernameField;
+
+
+    public string highestScoretext;
     UnityEngine.TouchScreenKeyboard keyboard;
     public static string keyboardText = "";
     public ScoreManager scoreManager;
@@ -145,7 +148,7 @@ public class FirebaseManager : MonoBehaviour
             Debug.LogFormat("User signed in successfully: {0} ({1})", User.DisplayName, User.Email);
             warningLoginText.text = "";
             confirmLoginText.text = "Logged In";
-            StartCoroutine(LoadUserData());
+            reloadUserData();
 
             yield return new WaitForSeconds(2);
 
@@ -156,6 +159,10 @@ public class FirebaseManager : MonoBehaviour
             ClearLoginFeilds();
             ClearRegisterFeilds();
         }
+    }
+    public void reloadUserData()
+    {
+        StartCoroutine(LoadUserData());
     }
     private IEnumerator Register(string _email, string _password, string _username)
     {
@@ -289,8 +296,8 @@ public class FirebaseManager : MonoBehaviour
         {
             //Data has been retrieved
             DataSnapshot snapshot = DBTask.Result;
-
-            HightscoreText.text = snapshot.Child("score").Value.ToString();
+            highestScoretext = snapshot.Child("score").Value.ToString();
+            HightscoreText.text = highestScoretext;
         }
     }
 

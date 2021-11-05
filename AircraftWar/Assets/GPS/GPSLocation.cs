@@ -16,10 +16,19 @@ public class GPSLocation : MonoBehaviour
     public double timeStampValue;
     public string key = "61660ffdadcdcb5184827cbd78634d92";
     public TMP_Text GPSCity;
+    public static GPSLocation Instance;
+    public string gpsloc;
 
     // Start is called before the first frame update
     void Start()
     {
+        if(Instance != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        Instance = this;
+        GameObject.DontDestroyOnLoad(this.gameObject);
         StartCoroutine(GPSLoc());
     }
 
@@ -101,9 +110,9 @@ public class GPSLocation : MonoBehaviour
             {
                 Debug.Log(webRequest.downloadHandler.text);
                 JsonData jd = JsonMapper.ToObject(webRequest.downloadHandler.text);
-                string gpsloc = jd["regeocode"]["addressComponent"]["city"].ToString()+", "+jd["regeocode"]["addressComponent"]["country"];
+                gpsloc = jd["regeocode"]["addressComponent"]["city"].ToString()+", "+jd["regeocode"]["addressComponent"]["country"];
                 Debug.Log(gpsloc);
-                
+
                 GPSCity.text = gpsloc;
             }
         }
