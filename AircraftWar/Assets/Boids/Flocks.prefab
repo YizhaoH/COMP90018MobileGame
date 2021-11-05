@@ -46,7 +46,7 @@ MonoBehaviour:
   target: {fileID: 0}
   agentPrefab: {fileID: 6750080314229093552, guid: 6ffac4d3ae7eb76498202cc68009f254, type: 3}
   behaviour: {fileID: 11400000, guid: f0a9661cb5c2b8740b40817e4d312564, type: 2}
-  startingCount: 15
+  startingCount: 10
   AgentDensity: 24.4
   driveFactor: 48
   maxSpeed: 100
@@ -71,7 +71,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8345777670241179750
 Transform:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   target: {fileID: 0}
   agentPrefab: {fileID: 6575410304419365718, guid: 2fd16f96be7b4424caf8008f8a442b5f, type: 3}
   behaviour: {fileID: 11400000, guid: f0a9661cb5c2b8740b40817e4d312564, type: 2}
-  startingCount: 15
+  startingCount: 10
   AgentDensity: 19.9
   driveFactor: 33.2
   maxSpeed: 65
@@ -126,7 +126,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8345777670442396146
 Transform:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   target: {fileID: 0}
   agentPrefab: {fileID: 6750080314229093552, guid: 6ffac4d3ae7eb76498202cc68009f254, type: 3}
   behaviour: {fileID: 11400000, guid: f0a9661cb5c2b8740b40817e4d312564, type: 2}
-  startingCount: 15
+  startingCount: 10
   AgentDensity: 21.6
   driveFactor: 49.3
   maxSpeed: 100
@@ -245,7 +245,7 @@ MonoBehaviour:
   target: {fileID: 0}
   agentPrefab: {fileID: 6575410304419365718, guid: 2fd16f96be7b4424caf8008f8a442b5f, type: 3}
   behaviour: {fileID: 11400000, guid: f0a9661cb5c2b8740b40817e4d312564, type: 2}
-  startingCount: 15
+  startingCount: 10
   AgentDensity: 20.83
   driveFactor: 35.4
   maxSpeed: 65
