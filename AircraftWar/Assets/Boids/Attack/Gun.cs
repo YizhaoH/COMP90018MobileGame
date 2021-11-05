@@ -26,8 +26,9 @@ public class Gun : Weapon
 
     public AudioSource gunshot;
 
-    public AudioClip singleShot;
-
+    private void Start() {
+        gunshot.volume = 0.1f;
+    }
 
     // Update is called once per frame
     void Update()
@@ -87,7 +88,8 @@ public class Gun : Weapon
 
             tempBullet.transform.parent = this.transform;
             //Debug.Log("Hit tag: " + hit.transform.tag.ToString());
-        
+            gunshot.Play();
+
             if(hit.transform.tag=="Player")
             {
                 tempBullet.GetComponent<MoveBullet>().hitPoint = hit.transform.position + hit.transform.forward * 35;

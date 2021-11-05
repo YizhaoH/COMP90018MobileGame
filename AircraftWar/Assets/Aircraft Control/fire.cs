@@ -8,9 +8,12 @@ public class fire : MonoBehaviour
     public Transform theMuzzle1;
     public Transform theMuzzle2;
 
+    public AudioSource shootAudio;
+
     // Start is called before the first frame update
     void Start()
     {
+        shootAudio.volume = 0.3f;
     }
 
     // Update is called once per frame
@@ -23,8 +26,6 @@ public class fire : MonoBehaviour
     public void onFire() {
         GameObject bulletClone1;
         GameObject bulletClone2;
-        
-
         
         bulletClone1 = Instantiate(theBullet, theMuzzle1.position, theMuzzle1.rotation);
         //bulletClone1.velocity = transform.TransformDirection(Vector3.forward * speed);
@@ -44,6 +45,8 @@ public class fire : MonoBehaviour
         bullet02.isPlayer = true;
         bullet02.speed = 50000;
         bullet02.transform.parent = this.transform;
+
+        shootAudio.Play();
 
     }
 }

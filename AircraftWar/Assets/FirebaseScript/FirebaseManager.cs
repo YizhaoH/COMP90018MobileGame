@@ -5,6 +5,7 @@ using Firebase;
 using Firebase.Database;
 using Firebase.Auth;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class FirebaseManager : MonoBehaviour
 {
@@ -45,6 +46,7 @@ public class FirebaseManager : MonoBehaviour
     public ScoreManager scoreManager;
     public static FirebaseManager Instance;
 
+
     private void Awake()
     {
         if(Instance != null)
@@ -71,7 +73,6 @@ public class FirebaseManager : MonoBehaviour
 
     private void InitializeFirebase()
     {
-        Debug.Log("Setting up Firebase Auth");
         auth = FirebaseAuth.DefaultInstance;
         DBreference = FirebaseDatabase.DefaultInstance.RootReference;
         scoreManager = GameObject.FindWithTag("Score").GetComponent<ScoreManager>();
@@ -104,14 +105,16 @@ public class FirebaseManager : MonoBehaviour
     public void SignOutButton()
     {
         auth.SignOut();
-        UIManager.instance.LoginScreen();
-       // ClearRegisterFeilds();
-       // ClearLoginFeilds();
+        FirebaseManager.User = null;
+        confirmLoginText.text = "";
+        //UIManager.instance.LoginScreen();
+        SceneManager.LoadScene(0);
+        // ClearRegisterFeilds();
+        // ClearLoginFeilds();
     }
 
     private IEnumerator Login(string _email, string _password)
     {
-        
         var LoginTask = auth.SignInWithEmailAndPasswordAsync(_email, _password);
         yield return new WaitUntil(predicate: () => LoginTask.IsCompleted);
 
@@ -148,21 +151,23 @@ public class FirebaseManager : MonoBehaviour
             Debug.LogFormat("User signed in successfully: {0} ({1})", User.DisplayName, User.Email);
             warningLoginText.text = "";
             confirmLoginText.text = "Logged In";
+
             reloadUserData();
-
-            yield return new WaitForSeconds(2);
-
             usernameText.text = User.DisplayName;
             EmailText.text = User.Email;
+
+            
             UIManager.instance.MainMenu();
-            confirmLoginText.text = "";
+            
             ClearLoginFeilds();
             ClearRegisterFeilds();
         }
+
     }
     public void reloadUserData()
     {
         StartCoroutine(LoadUserData());
+        
     }
     private IEnumerator Register(string _email, string _password, string _username)
     {
@@ -277,6 +282,7 @@ public class FirebaseManager : MonoBehaviour
 
     private IEnumerator LoadUserData()
     {
+        
         //Get the currently logged in user data
         var DBTask = DBreference.Child("users").Child(User.UserId).GetValueAsync();
 
@@ -290,7 +296,6 @@ public class FirebaseManager : MonoBehaviour
         {
             //No data exists yet
             HightscoreText.text = "0";
-
         }
         else
         {
@@ -299,6 +304,8 @@ public class FirebaseManager : MonoBehaviour
             highestScoretext = snapshot.Child("score").Value.ToString();
             HightscoreText.text = highestScoretext;
         }
+        yield return new WaitForSeconds(1f);
+
     }
 
 }

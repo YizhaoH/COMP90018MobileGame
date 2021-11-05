@@ -22,7 +22,7 @@ public class HealthHandler : MonoBehaviour
         if (this.transform.parent.gameObject.CompareTag("Player"))
         {
             
-            Debug.Log("player"+healthSystem.health.ToString());
+            //Debug.Log("player"+healthSystem.health.ToString());
             healthBarTransform = Instantiate(pfhealthBar, new Vector3(0, -7 ,0) + this.transform.position, this.transform.parent.rotation).transform;
             healthBarTransform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }

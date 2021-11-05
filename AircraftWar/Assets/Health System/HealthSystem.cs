@@ -20,7 +20,7 @@ public class HealthSystem : MonoBehaviour
         if (health<0) health = 0;
         if (health <= 0)
         {
-            Debug.Log(this.transform.tag);
+            //Debug.Log(this.transform.tag);
             checkGameOver();
         }
         if (OnHealthChanged != null) OnHealthChanged(this, EventArgs.Empty);
@@ -29,7 +29,7 @@ public class HealthSystem : MonoBehaviour
     {
         if (this.transform.parent.tag == "Player")
         {
-            Debug.Log("over");
+            //Debug.Log("over");
             endGameMenu.Setup(scoreManager.score);
         }
     }

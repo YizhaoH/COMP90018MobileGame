@@ -102,11 +102,11 @@ MonoBehaviour:
   m_AdvancedMode: 0
   threshold:
     m_OverrideState: 1
-    m_Value: 0.86
+    m_Value: 0.71
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.88
+    m_Value: 3.05
     min: 0
   scatter:
     m_OverrideState: 1
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   temperature:
     m_OverrideState: 1
-    m_Value: -6.7
+    m_Value: -14
     min: -100
     max: 100
   tint:

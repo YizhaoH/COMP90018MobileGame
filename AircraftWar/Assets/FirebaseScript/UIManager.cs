@@ -29,14 +29,12 @@ public class UIManager : MonoBehaviour
         }
         else if (instance != null)
         {
-            Debug.Log("Instance already exists, destroying object!");
             Destroy(this);
         }
     }
 
     public void ClearScreen()
     {
-        Debug.Log("clear screen");
         loginUI.SetActive(false);
         registerUI.SetActive(false);
         personalPage.SetActive(false);
@@ -60,7 +58,6 @@ public class UIManager : MonoBehaviour
     }
     public void MainMenu()
     {
-        Debug.Log("mainmenu on");
         ClearScreen();
         startpage.SetActive(false);
         mainmenu.SetActive(true);

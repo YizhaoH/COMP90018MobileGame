@@ -20,7 +20,7 @@ public class MoveBullet : MonoBehaviour
     public bool isPlayer = false;
 
 
-    //public AudioSource myShot;
+    public AudioSource myShot;
     // Start is called before the first frame update
     void Start()
     {

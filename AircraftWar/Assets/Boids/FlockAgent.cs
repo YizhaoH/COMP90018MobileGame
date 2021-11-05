@@ -21,6 +21,8 @@ public class FlockAgent : MonoBehaviour
 
     public ScoreManager scoreManager;
 
+    public AudioSource deadAudio;
+
     public void Setup(HealthSystem hs)
     {
         this.healthSystem = hs;
@@ -29,7 +31,7 @@ public class FlockAgent : MonoBehaviour
 
     private void HealthSystem_OnHealthChanged(object sender, System.EventArgs e)
     {
-        Debug.Log("flock agent health change!");
+        //Debug.Log("flock agent health change!");
         if(healthSystem.getHealth()<=0)
         {
             transform.Find("Model").gameObject.SetActive(false);
@@ -51,7 +53,7 @@ public class FlockAgent : MonoBehaviour
         scoreManager = GameObject.FindWithTag("Score").GetComponent<ScoreManager>();
         if (scoreManager == null)
          {
-            Debug.Log("null");
+            Debug.Log("scoreManager is null");
          }
     }
 
@@ -105,6 +107,7 @@ public class FlockAgent : MonoBehaviour
 
     public void Dead()
     {
+        deadAudio.Play();
         isDead = true;
         Destroy(this.gameObject, 1f);
     }

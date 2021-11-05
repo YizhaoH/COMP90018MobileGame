@@ -17,10 +17,11 @@ public class MissleGun : Weapon
     Vector3 shootPoint01;
     public GameObject shootPointObj02;
     Vector3 shootPoint02;
-    public AudioSource gunshot;
+    public AudioSource missleAudio;
 
-    public AudioClip singleShot;
-
+    void Start() {
+        missleAudio.volume = 0.1f;
+    }
 
     // Update is called once per frame
     void Update()
@@ -69,6 +70,8 @@ public class MissleGun : Weapon
             tempMissle01.transform.parent = this.transform;
             GameObject tempMissle02 = Instantiate(missle, shootPoint01, fireRotation);
             tempMissle02.transform.parent = this.transform;
+
+            missleAudio.Play();
         }
     }
 }

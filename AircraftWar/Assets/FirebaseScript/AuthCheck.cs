@@ -14,47 +14,93 @@ public class AuthCheck : MonoBehaviour
    public GameObject mainMenuContainor;
     void OnEnable()
     {
-
+        startpageUpdate(); 
+        accountPageUpdate(); 
+        mainmenuUpdate();
         if(FirebaseManager.User != null)
         {
             mainmenuContainer = GameObject.Find("MainMenuContainor");
             mainmenuContainer.transform.GetChild(0).gameObject.SetActive(true);
-            updateInformation();  
-            startpageUpdate(); 
-           mainmenuUpdate();
+            
             this.gameObject.SetActive(false);
         }
     }
 
-    public void updateInformation()
+    public void accountPageUpdate()
     {
         accountPageContainor = GameObject.Find("AccountPageContainor");
         Transform[] allchildren = accountPageContainor.transform.GetComponentsInChildren<Transform>(true);
-        for (int i = 0; i<allchildren.Length; i++)
+        if(FirebaseManager.User !=null)
         {
-            Debug.Log(allchildren[i].name);
-            switch (allchildren[i].name) 
+            for (int i = 0; i<allchildren.Length; i++)
             {
-                case "Username":
-                    allchildren[i].GetComponent<TMP_Text>().text = FirebaseManager.User.DisplayName;
-                    Debug.Log("username:" + FirebaseManager.User.DisplayName);
-                    break;
-                case "Email":
-                    allchildren[i].GetComponent<TMP_Text>().text = FirebaseManager.User.Email;
-                    break;
-                case "City":
-                    allchildren[i].GetComponent<TMP_Text>().text = GPSLocation.Instance.gpsloc;
-                    break;
-                case "HighestScore":
-                    allchildren[i].GetComponent<TMP_Text>().text = FirebaseManager.Instance.highestScoretext;
-                    break;
-                case "Logout":
-                    allchildren[i].GetComponent<Button>().onClick.AddListener(FirebaseManager.Instance.SignOutButton);
-                    break;
-                
+                //Debug.Log(allchildren[i].name);
+                switch (allchildren[i].name) 
+                {
+                    case "Username":
+                        allchildren[i].GetComponent<TMP_Text>().text = FirebaseManager.User.DisplayName;
+                        //Debug.Log("username:" + FirebaseManager.User.DisplayName);
+                        break;
+                    case "Email":
+                        allchildren[i].GetComponent<TMP_Text>().text = FirebaseManager.User.Email;
+                        break;
+                    case "City":
+                        allchildren[i].GetComponent<TMP_Text>().text = GPSLocation.Instance.gpsloc;
+                        break;
+                    case "UsernameField":
+                        if(FirebaseManager.Instance.usernameField==null)
+                        FirebaseManager.Instance.usernameField = allchildren[i].GetComponent<TMP_InputField>();
+                        break;
+                    
+                    case "HighestScore":
+                        allchildren[i].GetComponent<TMP_Text>().text = FirebaseManager.Instance.highestScoretext;
+                        break;
+                    case "Logout":
+                        allchildren[i].GetComponent<Button>().onClick.AddListener(FirebaseManager.Instance.SignOutButton);
+                        break;  
+                    case "SaveChange":
+                        allchildren[i].GetComponent<Button>().onClick.AddListener(FirebaseManager.Instance.SaveChange);
+                        break;    
+                }
             }
-  
+        }else
+        {
+            for (int i = 0; i<allchildren.Length; i++)
+            {
+                //Debug.Log(allchildren[i].name);
+                switch (allchildren[i].name) 
+                {
+                    case "Username":
+                        if(FirebaseManager.Instance.usernameText==null)
+                        FirebaseManager.Instance.usernameText = allchildren[i].GetComponent<TMP_Text>();
+                        break;
+                    case "Email":
+                        if(FirebaseManager.Instance.EmailText==null)
+                        FirebaseManager.Instance.EmailText = allchildren[i].GetComponent<TMP_Text>();
+                        break;
+                    case "UsernameField":
+                        if(FirebaseManager.Instance.usernameField==null)
+                        FirebaseManager.Instance.usernameField = allchildren[i].GetComponent<TMP_InputField>();
+                        break;
+
+                    case "City":
+                        if(FirebaseManager.Instance.City==null)
+                        FirebaseManager.Instance.City = allchildren[i].GetComponent<TMP_Text>();
+                        break;
+                    case "HighestScore":
+                        if(FirebaseManager.Instance.HightscoreText==null)
+                        FirebaseManager.Instance.HightscoreText = allchildren[i].GetComponent<TMP_Text>();
+                        break;
+                    case "Logout":
+                        allchildren[i].GetComponent<Button>().onClick.AddListener(FirebaseManager.Instance.SignOutButton);
+                        break;     
+                    case "SaveChange":
+                        allchildren[i].GetComponent<Button>().onClick.AddListener(FirebaseManager.Instance.SaveChange);
+                        break; 
+                }
+            }
         }
+        
 
     }
     public void mainmenuUpdate()
@@ -63,7 +109,7 @@ public class AuthCheck : MonoBehaviour
         Transform[] allchildren = mainMenuContainor.transform.GetComponentsInChildren<Transform>(true);
         for (int i = 0; i<allchildren.Length; i++)
         {
-            Debug.Log(allchildren[i].name);
+            //Debug.Log(allchildren[i].name);
             if (allchildren[i].name == "Start")
             {
                 allchildren[i].GetComponent<Button>().onClick.AddListener(controlSettingUpdate);
@@ -81,17 +127,27 @@ public class AuthCheck : MonoBehaviour
         Transform[] allchildren = startPageContainor.transform.GetComponentsInChildren<Transform>(true);
         for (int i = 0; i<allchildren.Length; i++)
         {
-            Debug.Log(allchildren[i].name);
+            //Debug.Log(allchildren[i].name);
             switch (allchildren[i].name) 
             {
-                case "AccountField":
+                //l0gin
+                case "L_AccountField":
                     FirebaseManager.Instance.emailLoginField =  allchildren[i].GetComponent<TMP_InputField>();
                     break;
-                case "PasswordsField":
+                case "L_PasswordsField":
                     FirebaseManager.Instance.passwordLoginField =  allchildren[i].GetComponent<TMP_InputField>();
                     break;
-                case "UserNameField":
-                    FirebaseManager.Instance.usernameField = allchildren[i].GetComponent<TMP_InputField>();
+                
+                case "L_Warnning_Text":
+                    FirebaseManager.Instance.warningLoginText = allchildren[i].GetComponent<TMP_Text>();
+                    break;
+                case "L_Comfirm_Text":
+                    FirebaseManager.Instance.confirmLoginText = allchildren[i].GetComponent<TMP_Text>();
+                    break;
+                //register
+                case "R_UserNameField":
+                    if(FirebaseManager.Instance.usernameRegisterField==null)
+                    FirebaseManager.Instance.usernameRegisterField = allchildren[i].GetComponent<TMP_InputField>();
                     break;
                 case "RegisterAccountField":
                     FirebaseManager.Instance.emailRegisterField = allchildren[i].GetComponent<TMP_InputField>();
@@ -101,8 +157,12 @@ public class AuthCheck : MonoBehaviour
                     break;
                 case "ComfirmPWDfield":
                     FirebaseManager.Instance.passwordRegisterVerifyField = allchildren[i].GetComponent<TMP_InputField>();
-                    break;   
+                    break;  
+                case "R_Warnning_Text ":
+                    FirebaseManager.Instance.warningRegisterText = allchildren[i].GetComponent<TMP_Text>();
+                    break;
                 case "Login":
+                    //Debug.Log("Login embedded!!!!!!!!!!");
                     allchildren[i].GetComponent<Button>().onClick.AddListener(FirebaseManager.Instance.LoginButton);
                     break;
                 case "ToRegisterPage":
@@ -122,10 +182,10 @@ public class AuthCheck : MonoBehaviour
         Transform[] allchildren = settingPopoutContainor.transform.GetComponentsInChildren<Transform>(true);
         for (int i = 0; i<allchildren.Length; i++)
         {
-            Debug.Log(allchildren[i].name);
+            //Debug.Log(allchildren[i].name);
             if (allchildren[i].name =="Gravity Control" && allchildren[i].GetComponent<Toggle>().isOn) 
             {
-                Debug.Log("switch control method");
+                //Debug.Log("switch control method");
                 ControlManager.Instance.Controlname ="Gravity Control";   
             }
             else if(allchildren[i].name =="Joystick Control" && allchildren[i].GetComponent<Toggle>().isOn)

@@ -1,0 +1,71 @@
+3e797ed sub
+54e3d5c togglefix
+0fe8c40 update
+9dc151a update
+20bb90c Updates
+6e0d467 update
+21a4435 ....
+46f1b8e Merge branch 'IngameUI-yuanli' of https://github.com/YizhaoH/COMP90018MobileGame into IngameUI-yuanli
+937ac8a Updates
+53f0cc4 update
+b6b54b0 quit function
+91f68bf new
+74f5cb3 Music and volume control
+0c24331 score-compare
+b8bdd4c update
+af909c6 score fix
+aced166 personal page update
+ea6bc08 updates
+494f890 Updates
+7c60d7d personal page fix
+9b16a76 update
+1d361e8 uifix
+42758f8 Updates
+6d0fe9b gps city
+1a5d6d7 pc gps
+00702a9 gps update
+2e12fb9 gps-update
+1d682d4 gps
+6a6f010 Revert "Revert "Merge branch 'main' of https://github.com/YizhaoH/COMP90018MobileGame""
+b5a3434 Revert "Merge branch 'main' of https://github.com/YizhaoH/COMP90018MobileGame"
+61bcd71 Merge branch 'main' of https://github.com/YizhaoH/COMP90018MobileGame
+4e5435f bg music
+e2a3d83 merge to main
+de9ff73 Merge branch 'main' of https://github.com/YizhaoH/COMP90018MobileGame
+824e9ef finish health system
+9a1c7a5 startpage
+81101a7 Audio files added
+8138b0f Add Shield
+f00339e Updates
+4650d4a delete aircraft file
+fe1b998 add aircraft attack (by Shujie)
+a39fb6a boids done
+3844eca  boids update
+f513cb5 personal page
+6afe444 Assets updates
+0219a2a aircraft attack with bullet
+ad80599 Audion added
+072cc6d Merge pull request #7 from YizhaoH/shujie-AircraftMovement
+3300dec flock algorithm  implementation
+1be7cd3 aircraft movement with mobile sensors
+93c527b mainmenu-personal page
+3bd9d1c Merge pull request #6 from YizhaoH/yuanli-menu
+30338d4 package fix
+2fe02da Merge pull request #5 from YizhaoH/yuanli-menu
+2263ccd update
+518f79b submit file
+0304ef5 Merge pull request #4 from YizhaoH/yizhao-terrain
+fe4b405 add aircraft control
+d8e4177 add cloud
+a0074e2 Updates
+e2aa7ff Merge pull request #3 from YizhaoH/yuanli-MainMenu
+708dace menu update
+2492aa0 mainmenu-moredetail
+1d445b9 mainmenu
+9aa652c implement terrain generator
+03d5689 test enviro and cloud prefab
+93ad3ac Merge pull request #1 from YizhaoH/yizhao-cloudshader
+2b272d4 Change to URP
+f937b93 create the unity project
+27d70aa Update Readme
+435d584 Initial commit

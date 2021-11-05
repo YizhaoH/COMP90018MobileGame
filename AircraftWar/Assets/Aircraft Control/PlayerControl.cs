@@ -34,6 +34,7 @@ public class PlayerControl : MonoBehaviour
 
     public HealthSystem healthSystem;
 
+
     private void Awake() {
         rb = GetComponent<Rigidbody>();
         //healthSystem = GetComponent<HealthSystem>();
