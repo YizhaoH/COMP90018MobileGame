@@ -162,7 +162,7 @@ MonoBehaviour:
   isLightningStorm: 0
   lightningInterval: 10
   auroraIntensity: 0
-  weatherSFX: {fileID: 0}
+  weatherSFX: {fileID: 8300000, guid: 8e4b0e73f4e66704c8c3cf838244d48e, type: 3}
   SpringDayAmbient: {fileID: 0}
   SpringNightAmbient: {fileID: 0}
   SummerDayAmbient: {fileID: 0}
