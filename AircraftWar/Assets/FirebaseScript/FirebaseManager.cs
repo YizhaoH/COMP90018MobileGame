@@ -45,7 +45,8 @@ public class FirebaseManager : MonoBehaviour
     public static string keyboardText = "";
     public ScoreManager scoreManager;
     public static FirebaseManager Instance;
-
+    private bool isLoginning = false;
+    private bool isRegistering = false;
 
     private void Awake()
     {
@@ -94,19 +95,25 @@ public class FirebaseManager : MonoBehaviour
 
     public void LoginButton()
     {
+       
         StartCoroutine(Login(emailLoginField.text, passwordLoginField.text));
     }
 
     public void RegisterButton()
     {
-        StartCoroutine(Register(emailRegisterField.text, passwordRegisterField.text, usernameRegisterField.text));
+        if (!isRegistering)
+            StartCoroutine(Register(emailRegisterField.text, passwordRegisterField.text, usernameRegisterField.text));
     }
 
     public void SignOutButton()
     {
+        isLoginning = false;
+        isRegistering = false;
         auth.SignOut();
         FirebaseManager.User = null;
         confirmLoginText.text = "";
+        warningRegisterText.text = "";
+        warningRegisterText.color = Color.red;
         //UIManager.instance.LoginScreen();
         SceneManager.LoadScene(0);
         // ClearRegisterFeilds();
@@ -115,6 +122,7 @@ public class FirebaseManager : MonoBehaviour
 
     private IEnumerator Login(string _email, string _password)
     {
+        isLoginning = true;
         var LoginTask = auth.SignInWithEmailAndPasswordAsync(_email, _password);
         yield return new WaitUntil(predicate: () => LoginTask.IsCompleted);
 
@@ -171,6 +179,7 @@ public class FirebaseManager : MonoBehaviour
     }
     private IEnumerator Register(string _email, string _password, string _username)
     {
+        isRegistering = true;
         if (_username == "")
         {
             warningRegisterText.text = "Missing Username";
@@ -227,8 +236,9 @@ public class FirebaseManager : MonoBehaviour
                     }
                     else
                     {
+                        warningRegisterText.text = "Succesful";
+                        warningLoginText.color = Color.green;
                         UIManager.instance.LoginScreen();
-                        warningRegisterText.text = "";
                         ClearLoginFeilds();
                         ClearRegisterFeilds();
                     }
