@@ -35,24 +35,6 @@ public class AuthCheck : MonoBehaviour
             Debug.Log(allchildren[i].name);
             switch (allchildren[i].name) 
             {
-                case "LoginEmailText":
-                    FirebaseManager.Instance.emailLoginField =  allchildren[i].GetComponent<TMP_InputField>();
-                    break;
-                case "LoginPasswordsText":
-                    FirebaseManager.Instance.passwordLoginField =  allchildren[i].GetComponent<TMP_InputField>();
-                    break;
-                case "UserNameText":
-                    FirebaseManager.Instance.usernameField = allchildren[i].GetComponent<TMP_InputField>();
-                    break;
-                case "RegisterEmailText":
-                    FirebaseManager.Instance.emailRegisterField = allchildren[i].GetComponent<TMP_InputField>();
-                    break;
-                case "RegisterPWDText":
-                    FirebaseManager.Instance.passwordRegisterField = allchildren[i].GetComponent<TMP_InputField>();
-                    break;
-                case "RegisterComfirmPWDText":
-                    FirebaseManager.Instance.passwordRegisterVerifyField = allchildren[i].GetComponent<TMP_InputField>();
-                    break;   
                 case "Username":
                     allchildren[i].GetComponent<TMP_Text>().text = FirebaseManager.User.DisplayName;
                     Debug.Log("username:" + FirebaseManager.User.DisplayName);
@@ -102,6 +84,24 @@ public class AuthCheck : MonoBehaviour
             Debug.Log(allchildren[i].name);
             switch (allchildren[i].name) 
             {
+                case "AccountField":
+                    FirebaseManager.Instance.emailLoginField =  allchildren[i].GetComponent<TMP_InputField>();
+                    break;
+                case "PasswordsField":
+                    FirebaseManager.Instance.passwordLoginField =  allchildren[i].GetComponent<TMP_InputField>();
+                    break;
+                case "UserNameField":
+                    FirebaseManager.Instance.usernameField = allchildren[i].GetComponent<TMP_InputField>();
+                    break;
+                case "RegisterAccountField":
+                    FirebaseManager.Instance.emailRegisterField = allchildren[i].GetComponent<TMP_InputField>();
+                    break;
+                case "PWDField":
+                    FirebaseManager.Instance.passwordRegisterField = allchildren[i].GetComponent<TMP_InputField>();
+                    break;
+                case "ComfirmPWDfield":
+                    FirebaseManager.Instance.passwordRegisterVerifyField = allchildren[i].GetComponent<TMP_InputField>();
+                    break;   
                 case "Login":
                     allchildren[i].GetComponent<Button>().onClick.AddListener(FirebaseManager.Instance.LoginButton);
                     break;
